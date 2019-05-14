@@ -18,13 +18,16 @@ class ShopController extends Controller
             $products = Product::sortByProducts($request->get('sort'));
 
         }
-        $categories = Category::all();
-        return view('commerce.shop', compact('products', 'categories'));
+            $categories = Category::all();
+            return view('commerce.shop', compact('products', 'categories'));
     }
 
     public function category($slug)
     {
-        echo $slug;
+       $category = Category::where('slug', $slug)->firstOrFail();;
+       $products = $category->products()->paginate(5);
+
+       return view( 'commerce.list', compact('products'));
     }
 
 

@@ -58,11 +58,8 @@
                     <div class="col-md-8 col-lg-8 col-sm-6 col-xs-6">
                         <nav class="mainmenu__nav hidden-xs hidden-sm">
                             <ul class="main__menu">
-                                <li class="drop"><a href="index.html">Home</a>
-                                    <ul class="dropdown">
-                                        <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index-2.html">Home 2</a></li>
-                                    </ul>
+                                <li class="drop"><a href="{{route('home.index')}}">Home</a>
+
                                 </li>
                                 <li class="drop"><a href="portfolio-gutter-box-3.html">portfolio</a>
                                     <ul class="dropdown">
