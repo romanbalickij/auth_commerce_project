@@ -70,7 +70,7 @@
                                                     <option value="expensive">from expensive to cheap</option>
                                                 </select>
                                                 <button type="submit" class="btn btn-light" >sort</button>
-                                            </div>
+                                             </div>
                                             </form>
                                         <div class="shp__pro__show">
                                         </div>
@@ -83,7 +83,8 @@
                                 <h4 class="section-title-4">PRODUCT CATEGORIES</h4>
                                 <ul class="sidebar__list">
                                     @foreach($categories as $category)
-                                        <li><a href="{{route('shop.category', $category->slug)}}">{{$category->name}}
+                                        <li>
+                                            <a href="{{route('shop.category', $category->slug)}}">{{$category->name}}
                                                 <span>
                                                     {{$category->products()->count()}}
                                                 </span>
@@ -109,16 +110,9 @@
                             <div class="htc__shop__cat">
                                 <h4 class="section-title-4">Tags</h4>
                                 <ul class="htc__tags">
-                                    <li><a href="#">All</a></li>
-                                    <li><a href="#">Clothing</a></li>
-                                    <li><a href="#">Kids</a></li>
-                                    <li><a href="#">Accessories</a></li>
-                                    <li><a href="#">Stationery</a></li>
-                                    <li><a href="#">Homelife</a></li>
-                                    <li><a href="#">Appliances</a></li>
-                                    <li><a href="#">Clothing</a></li>
-                                    <li><a href="#">Baby</a></li>
-                                    <li><a href="#">Beauty</a></li>
+                                    @foreach($tags as $tag)
+                                        <li><a href="{{route('shop.tag', $tag->slug)}}">{{$tag->title}}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                             <!-- End Tag Area -->
@@ -149,14 +143,7 @@
                                                             <img src="{{$product->getImage()}}" alt="product images">
                                                         </a>
                                                     </div>
-                                                    <div class="product__hover__info">
-                                                        <ul class="product__action">
-                                                            <li><a data-toggle="modal"  title="Quick View" class="quick-view modal-view detail-link"
-                                                                   href="{{route('show.product', $product->slug)}}"><span class="ti-plus"></span></a></li>
-                                                            <li><a title="Add To Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
-                                                            <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
-                                                        </ul>
-                                                    </div>
+                                                  @include('commerce.partial.add_cart')
                                                 </div>
                                                 <div class="product__details">
                                                     <h2><a href="{{route('show.product', $product->slug)}}">{{$product->name}}</a></h2>

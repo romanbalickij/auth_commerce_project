@@ -15,6 +15,10 @@ class Product extends Model
 
         return $this->belongsToMany(Category::class, 'category_product');
     }
+    public function tags(){
+
+        return $this->belongsToMany(Tag::class, 'product_tags');
+    }
 
     public function presentPrice()
     {
