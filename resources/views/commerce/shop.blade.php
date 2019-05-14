@@ -133,7 +133,7 @@
                             <div class="shop__grid__view__wrap another-product-style">
                                 <!-- Start Single View -->
                                 <div role="tabpanel" id="grid-view" class="single-grid-view tab-pane fade in active clearfix">
-                                    @forelse($products as $product)
+                                    @foreach($products as $product)
                                         <!-- Start Single Product -->
                                            <div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
                                             <div class="product">

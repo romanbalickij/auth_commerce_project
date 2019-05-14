@@ -8,7 +8,8 @@
                 <input type="hidden" name="id" value="{{$product->id}}">
                 <input type="hidden" name="name" value="{{$product->name}}">
                 <input type="hidden" name="price" value="{{$product->price}}">
-                <a title="Add To Cart" href="cart.html"><span class="ti-shopping-cart"></span></a>
+                <button type="submit"  class="btn btn-outline-dark"><span class="ti-shopping-cart"></span></button>
+
             </form>
         </li>
 

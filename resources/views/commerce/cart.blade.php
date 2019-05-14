@@ -11,7 +11,7 @@
                         <div class="bradcaump__inner text-center">
                             <h2 class="bradcaump-title">Cart</h2>
                             <nav class="bradcaump-inner">
-                                <a class="breadcrumb-item" href="index.html">Home</a>
+                                <a class="breadcrumb-item" href="{{route('home.index')}}">Home</a>
                                 <span class="brd-separetor">/</span>
                                 <span class="breadcrumb-item active">Cart</span>
                             </nav>
@@ -29,6 +29,11 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <form action="#">
                         <div class="table-content table-responsive">
+                             @if(session()->has('success_message'))
+                                <div class="alert alert-success">
+                                    {{session()->get('success_message')}}
+                                </div>
+                             @endif
                             <table>
                                 <thead>
                                 <tr>
@@ -41,22 +46,17 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                             @foreach(Cart::content() as $product)
+
                                 <tr>
-                                    <td class="product-thumbnail"><a href="#"><img src="images/product/4.png" alt="product img" /></a></td>
-                                    <td class="product-name"><a href="#">Vestibulum suscipit</a></td>
-                                    <td class="product-price"><span class="amount">£165.00</span></td>
+                                    <td class="product-thumbnail"><a href="{{route('show.product', $product->model->slug)}}"><img src="{{$product->model->getImage()}}" alt="product img" /></a></td>
+                                    <td class="product-name"><a href="#">{{$product->name}}</a></td>
+                                    <td class="product-price"><span class="amount">{{$product->model->presentPrice()}}</span></td>
                                     <td class="product-quantity"><input type="number" value="1" /></td>
-                                    <td class="product-subtotal">£165.00</td>
+                                    <td class="product-subtotal">{{ presentPrice($product->subtotal())}}</td>
                                     <td class="product-remove"><a href="#">X</a></td>
                                 </tr>
-                                <tr>
-                                    <td class="product-thumbnail"><a href="#"><img src="images/product/3.png" alt="product img" /></a></td>
-                                    <td class="product-name"><a href="#">Vestibulum dictum magna</a></td>
-                                    <td class="product-price"><span class="amount">£50.00</span></td>
-                                    <td class="product-quantity"><input type="number" value="1" /></td>
-                                    <td class="product-subtotal">£50.00</td>
-                                    <td class="product-remove"><a href="#">X</a></td>
-                                </tr>
+                              @endforeach
                                 </tbody>
                             </table>
                         </div>
