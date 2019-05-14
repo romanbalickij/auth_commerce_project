@@ -1,7 +1,6 @@
 @extends('commerce.layout')
 
 @section('content')
-
     <div class="body__overlay"></div>
     <!-- Start Offset Wrapper -->
     <div class="offset__wrapper">
@@ -115,15 +114,7 @@
                                         </a>
                                     </div>
                                     <div class="product__hover__info">
-                                        <ul class="product__action">
-                                            <li><a data-toggle="modal"  title="Quick View"
-                                                   class="quick-view modal-view " href="{{route('show.product', $product->slug)}}">
-                                                    <span class="ti-plus"></span>
-                                                </a>
-                                            </li>
-                                            <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
-                                            <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
-                                        </ul>
+                                        @include('commerce.partial.add_cart')
                                     </div>
                                 </div>
                                 <div class="product__details">

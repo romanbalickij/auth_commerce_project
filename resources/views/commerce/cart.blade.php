@@ -28,12 +28,13 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="table-content table-responsive">
-                             @if(session()->has('success_message'))
-                                <div class="alert alert-success">
-                                    {{session()->get('success_message')}}
-                                </div>
-                             @endif
-                             @if(Cart::content()->isNotEmpty())
+                     @if(session()->has('success_message'))
+                        <div class="alert alert-success">
+                            {{session()->get('success_message')}}
+                        </div>
+                     @endif
+
+                     @if(Cart::content()->isNotEmpty())
                                 <table>
                                     <thead>
                                     <tr>
@@ -122,13 +123,12 @@
                                 </div>
                             </div>
                         </div>
-                             @else
-                                <h1>No items in Cart!</h1>
-                                 <a href="{{route('shop.index')}}">Continue Shopping </a>
-                             @endif
+                     @else
+                        <h1>No items in Cart!</h1>
+                         <a href="{{route('shop.index')}}">Continue Shopping </a>
+                     @endif
                 </div>
             </div>
         </div>
     </div>
-
 @endsection
