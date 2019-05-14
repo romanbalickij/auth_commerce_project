@@ -27,35 +27,40 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <form action="#">
                         <div class="table-content table-responsive">
                              @if(session()->has('success_message'))
                                 <div class="alert alert-success">
                                     {{session()->get('success_message')}}
                                 </div>
                              @endif
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th class="product-thumbnail">Image</th>
-                                    <th class="product-name">Product</th>
-                                    <th class="product-price">Price</th>
-                                    <th class="product-quantity">Quantity</th>
-                                    <th class="product-subtotal">Total</th>
-                                    <th class="product-remove">Remove</th>
-                                </tr>
-                                </thead>
-                                <tbody>
+                             @if(Cart::content()->isNotEmpty())
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th class="product-thumbnail">Image</th>
+                                        <th class="product-name">Product</th>
+                                        <th class="product-price">Price</th>
+                                        <th class="product-quantity">Quantity</th>
+                                        <th class="product-subtotal">Total</th>
+                                        <th class="product-remove">Remove</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
                              @foreach(Cart::content() as $product)
-
-                                <tr>
-                                    <td class="product-thumbnail"><a href="{{route('show.product', $product->model->slug)}}"><img src="{{$product->model->getImage()}}" alt="product img" /></a></td>
-                                    <td class="product-name"><a href="#">{{$product->name}}</a></td>
-                                    <td class="product-price"><span class="amount">{{$product->model->presentPrice()}}</span></td>
-                                    <td class="product-quantity"><input type="number" value="1" /></td>
-                                    <td class="product-subtotal">{{ presentPrice($product->subtotal())}}</td>
-                                    <td class="product-remove"><a href="#">X</a></td>
-                                </tr>
+                                    <tr>
+                                        <td class="product-thumbnail"><a href="{{route('show.product', $product->model->slug)}}"><img src="{{$product->model->getImage()}}" alt="product img" /></a></td>
+                                        <td class="product-name"><a href="#">{{$product->name}}</a></td>
+                                        <td class="product-price"><span class="amount">{{$product->model->presentPrice()}}</span></td>
+                                        <td class="product-quantity"><input type="number" value="1" /></td>
+                                        <td class="product-subtotal">{{ presentPrice($product->subtotal())}}</td>
+                                        <td class="product-remove">
+                                            <form action="{{route('cart.destroy', $product->rowId)}}" method="Post">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button type="submit" class="btn btn-outline-dark">X</button>
+                                            </form>
+                                        </td>
+                                    </tr>
                               @endforeach
                                 </tbody>
                             </table>
@@ -106,7 +111,7 @@
                                         <tr class="order-total">
                                             <th>Total</th>
                                             <td>
-                                                <strong><span class="amount">£215.00</span></strong>
+                                                <strong><span class="amount">{{presentPrice(Cart::subtotal())}}</span></strong>
                                             </td>
                                         </tr>
                                         </tbody>
@@ -117,7 +122,10 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
+                             @else
+                                <h1>No items in Cart!</h1>
+                                 <a href="{{route('shop.index')}}">Continue Shopping </a>
+                             @endif
                 </div>
             </div>
         </div>

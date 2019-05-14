@@ -18,14 +18,19 @@ class CartController extends Controller
     {
         Cart::add($request->id, $request->name, 1 , $request->price)->associate('App\Models\Product');
 
-       $dublicat = Cart::search(function ($cartItem, $rowId) use($request) {
+       $dublicates = Cart::search(function ($cartItem, $rowId) use($request) {
             return $cartItem->id ===  $request->id;
         });
 
-       if($dublicat->isNotEmpty()){
+       if($dublicates->isNotEmpty()){
            return redirect()->route('cart.index')->with('success_message', 'Item is already is you cart!');
        }
+           return redirect()->route('cart.index')->with('success_message', 'Item was added to you cart!');
+    }
 
-       return redirect()->route('cart.index')->with('success_message', 'Item was added to you cart!');
+    public function destroy($id){
+
+        Cart::remove($id);
+        return redirect()->back()->with('success_message', 'Item was delete!');
     }
 }

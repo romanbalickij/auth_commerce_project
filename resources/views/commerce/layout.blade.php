@@ -182,7 +182,7 @@
                             <div class="blog__inner">
                                 <div class="blog__thumb">
                                     <a href="blog-details.html">
-                                        <img src="images/blog/blog-img/1.jpg" alt="blog images">
+                                        <img src="/commerce/images/blog/blog-img/1.jpg" alt="blog images">
                                     </a>
                                     <div class="blog__post__time">
                                         <div class="post__time--inner">
@@ -213,7 +213,7 @@
                             <div class="blog__inner">
                                 <div class="blog__thumb">
                                     <a href="blog-details.html">
-                                        <img src="images/blog/blog-img/2.jpg" alt="blog images">
+                                        <img src="/commerce/images/blog/blog-img/2.jpg" alt="blog images">
                                     </a>
                                     <div class="blog__post__time">
                                         <div class="post__time--inner">
@@ -244,7 +244,7 @@
                             <div class="blog__inner">
                                 <div class="blog__thumb">
                                     <a href="blog-details.html">
-                                        <img src="images/blog/blog-img/3.jpg" alt="blog images">
+                                        <img src="/commerce/images/blog/blog-img/3.jpg" alt="blog images">
                                     </a>
                                     <div class="blog__post__time">
                                         <div class="post__time--inner">
@@ -284,7 +284,7 @@
                         <div class="ft__widget">
                             <div class="ft__logo">
                                 <a href="index.html">
-                                    <img src="images/logo/logo.png" alt="footer logo">
+                                    <img src="/commerce/images/logo/logo.png" alt="footer logo">
                                 </a>
                             </div>
                             <div class="footer-address">
