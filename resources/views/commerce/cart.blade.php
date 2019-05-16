@@ -98,27 +98,14 @@
                                     <h2>Cart Totals</h2>
                                     <table>
                                         <tbody>
+                                        @if(session()->has('coupon'))
                                         <tr class="cart-subtotal">
                                             <th>Discount</th>
-                                            <td><span class="amount">£215.00</span></td>
+                                            <td><span class="amount">{{presentPrice(session()->get('coupon'))}}</span></td>
                                         </tr>
-{{--                                        <tr class="shipping">--}}
-{{--                                            <th>Shipping</th>--}}
-{{--                                            <td></td>--}}
-{{--                                        </tr>--}}
+                                        @endif
                                         <ul id="shipping_method">
-{{--                                            <li>--}}
-{{--                                                <input type="radio" />--}}
-{{--                                                <label>--}}
-{{--                                                    Flat Rate: <span class="amount">£7.00</span>--}}
-{{--                                                </label>--}}
-{{--                                            </li>--}}
-{{--                                            <li>--}}
-{{--                                                <input type="radio" />--}}
-{{--                                                <label>--}}
-{{--                                                    Free Shipping--}}
-{{--                                                </label>--}}
-{{--                                            </li>--}}
+
                                             <li></li>
                                         </ul>
                                         <tr class="order-total">
