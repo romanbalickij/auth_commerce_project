@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Commerce;
 
 
 use App\Models\Coupon;
+use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,15 +20,11 @@ class CartController extends Controller
     public function store(Request $request)
     {
 
-        Cart::add($request->id, $request->name, 1 , $request->price)->associate('App\Models\Product');
-
-       $dublicates = Cart::search(function ($cartItem, $rowId) use($request) {
-            return $cartItem->id ===  $request->id;
-        });
-
-       if($dublicates->isNotEmpty()){
+           $dublicates = Product::duplicateProduct($request);
+        if($dublicates->isNotEmpty()){
            return redirect()->route('cart.index')->with('success_message', 'Item is already is you cart!');
-       }
+         }
+           Product::addToCart($request);
            return redirect()->route('cart.index')->with('success_message', 'Item was added to you cart!');
     }
 
@@ -43,6 +40,8 @@ class CartController extends Controller
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      * remove the product from Сart
+     * remove session coupon discount
+     *
      */
     public function destroy($id){
 

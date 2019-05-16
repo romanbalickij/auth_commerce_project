@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -43,5 +44,16 @@ class Product extends Model
         } elseif($sort == 'expensive') {
             return self::orderBy('price', 'desc')->paginate(5);
         }
+    }
+
+    public static function addToCart($product){
+
+      return  Cart::add($product->id, $product->name, 1 , $product->price)->associate('App\Models\Product');
+    }
+    public static function duplicateProduct($product)
+    {
+       return  Cart::search(function ($cartItem, $rowId) use($product) {
+            return $cartItem->id ===  $product->id;
+        });
     }
 }
