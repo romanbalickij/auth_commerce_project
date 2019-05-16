@@ -29,6 +29,7 @@ class CartController extends Controller
            return redirect()->route('cart.index')->with('success_message', 'Item was added to you cart!');
     }
 
+    /**Update quantity product in Cart*/
     public function update(Request $request, $id)
     {
         Cart::update($id, $request->quantity);
@@ -36,6 +37,11 @@ class CartController extends Controller
         return response()->json(['success' => true]);
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     * remove the product from Сart
+     */
     public function destroy($id){
 
         Cart::remove($id);

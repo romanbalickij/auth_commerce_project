@@ -34,7 +34,10 @@
                         </div>
                      @endif
 
-                     @if(Cart::content()->isNotEmpty())
+                     @include('commerce.errors.errors')
+
+                     @if(Cart::count() > 0)
+                             <h2>{{Cart::count()}} Product(s) in Shopping Cart</h2>
                                 <table>
                                     <thead>
                                     <tr>
@@ -83,8 +86,11 @@
                                 <div class="coupon">
                                     <h3>Coupon</h3>
                                     <p>Enter your coupon code if you have one.</p>
-                                    <input type="text" placeholder="Coupon code" />
-                                    <input type="submit" value="Apply Coupon" />
+                                    <form action="{{route('coupon')}}"  method="post">
+                                        @csrf
+                                        <input type="text" name="coupon" placeholder="Coupon code" />
+                                        <input type="submit" value="Apply Coupon" />
+                                    </form>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-5 col-xs-12">
