@@ -50,9 +50,18 @@
                              @foreach(Cart::content() as $product)
                                     <tr>
                                         <td class="product-thumbnail"><a href="{{route('show.product', $product->model->slug)}}"><img src="{{$product->model->getImage()}}" alt="product img" /></a></td>
-                                        <td class="product-name"><a href="#">{{$product->name}}</a></td>
+                                        <td class="product-name"><a href="{{route('show.product', $product->model->slug)}}">{{$product->name}}</a></td>
                                         <td class="product-price"><span class="amount">{{$product->model->presentPrice()}}</span></td>
-                                        <td class="product-quantity"><input type="number" value="1" /></td>
+                                        <td class="product-quantity">
+                                            <div>
+                                                <select class="quantity" data-id="{{$product->rowId}}" data-productQuantity="{{$product->model->quantity}}">
+                                                    @for($i =1; $i < 5 + 1; $i++)
+                                                        <option {{$product->qty == $i ? 'selected' : ''}}>{{$i}}</option>
+                                                    @endfor
+                                                </select>
+                                            </div>
+
+                                        </td>
                                         <td class="product-subtotal">{{ presentPrice($product->subtotal())}}</td>
                                         <td class="product-remove">
                                             <form action="{{route('cart.destroy', $product->rowId)}}" method="Post">
@@ -69,8 +78,7 @@
                         <div class="row">
                             <div class="col-md-8 col-sm-7 col-xs-12">
                                 <div class="buttons-cart">
-                                    <input type="submit" value="Update Cart" />
-                                    <a href="#">Continue Shopping</a>
+                                    <a href="{{route('shop.index')}}">Continue Shopping</a>
                                 </div>
                                 <div class="coupon">
                                     <h3>Coupon</h3>
@@ -132,3 +140,36 @@
         </div>
     </div>
 @endsection
+
+
+@section('js')
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        (function () {
+            const classname = document.querySelectorAll('.quantity')
+
+            Array.from(classname).forEach(function (element) {
+                element.addEventListener('change', function () {
+                    const id = element.getAttribute('data-id')
+                    const productQuantity = element.getAttribute('data-productQuantity')
+
+                    axios.patch(`/cart/${id}`, {
+                        quantity: this.value,
+                        productQuantity: productQuantity
+                    })
+                        .then(function (response) {
+                               console.log(response);
+                            window.location.href = '{{route('cart.index')}}'
+                        })
+                        .catch(function (error) {
+                             console.log(error);
+                            window.location.href = '{{route('cart.index')}}'
+                        });
+                })
+            })
+        })();
+    </script>
+@endsection
+
+

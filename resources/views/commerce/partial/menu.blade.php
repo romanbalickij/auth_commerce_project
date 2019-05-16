@@ -19,12 +19,16 @@
 </div>
 <div class="col-md-2 col-sm-4 col-xs-3">
     <ul class="menu-extra">
-        <li class="search search__open hidden-xs"><span class="ti-search"></span></li>
-        <li><a href="login-register.html"><span class="ti-user"></span></a></li>
-        @if(Cart::content()->count() > 0)
-            <li class="cart__menu"><span class="ti-shopping-cart">{{Cart::content()->count()}}</span></li>
-        @else
-            <li class="cart__menu"><span class="ti-shopping-cart"></span></li>
-        @endif
+        <li ><span class="ti-search"></span></li>
+        <li><a href=""><span class="ti-user"></span></a></li>
+        <a href="{{route('cart.index')}}">
+            <li >
+                <span class="ti-shopping-cart">
+                     @if(Cart::instance('default')->count() > 0 )
+                        {{Cart::instance('default')->count()}}
+                     @endif
+                </span>
+            </li>
+        </a>
     </ul>
 </div>

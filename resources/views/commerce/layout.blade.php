@@ -326,6 +326,10 @@
 <!-- Main js file that contents all jQuery plugins activation. -->
 <script src="/commerce/js/main.js"></script>
 
+@yield('js')
+
+
+
 </body>
 
 </html>
