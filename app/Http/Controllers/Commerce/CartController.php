@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Commerce;
 
 
+use App\Models\Coupon;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -11,7 +12,8 @@ class CartController extends Controller
 {
     public function index(){
 
-       return view('commerce.cart');
+        $newSubtotal =  Coupon::getCouponDiscount();
+        return view('commerce.cart', compact('newSubtotal'));
     }
 
     public function store(Request $request)
@@ -45,6 +47,7 @@ class CartController extends Controller
     public function destroy($id){
 
         Cart::remove($id);
+        session()->forget('coupon');
         return redirect()->back()->with('success_message', 'Item was delete!');
     }
 }

@@ -12,15 +12,11 @@ class CouponController extends Controller
     public function coupon(Request $request)
     {
         $coupon = Coupon::findByCoupon($request->coupon);
-
-        if($coupon->isEmpty()){
+        if(!$coupon){
             return  redirect()->back()->withErrors('invalid coupon code please try again');
         }
-
-        foreach ($coupon  as $discount)
-        {
-
-        }
-        dd($discount->percent_off);
+          /**save  discount  in session **/
+         $coupon->saveCouponDiscount();
+         return redirect()->back()->with('success_message', 'coupon has ben upload');
     }
 }

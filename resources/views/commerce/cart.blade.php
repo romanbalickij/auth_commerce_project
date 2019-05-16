@@ -99,34 +99,32 @@
                                     <table>
                                         <tbody>
                                         <tr class="cart-subtotal">
-                                            <th>Subtotal</th>
+                                            <th>Discount</th>
                                             <td><span class="amount">£215.00</span></td>
                                         </tr>
-                                        <tr class="shipping">
-                                            <th>Shipping</th>
-                                            <td></td>
-                                        </tr>
+{{--                                        <tr class="shipping">--}}
+{{--                                            <th>Shipping</th>--}}
+{{--                                            <td></td>--}}
+{{--                                        </tr>--}}
                                         <ul id="shipping_method">
-                                            <li>
-                                                <input type="radio" />
-                                                <label>
-                                                    Flat Rate: <span class="amount">£7.00</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" />
-                                                <label>
-                                                    Free Shipping
-                                                </label>
-                                            </li>
+{{--                                            <li>--}}
+{{--                                                <input type="radio" />--}}
+{{--                                                <label>--}}
+{{--                                                    Flat Rate: <span class="amount">£7.00</span>--}}
+{{--                                                </label>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <input type="radio" />--}}
+{{--                                                <label>--}}
+{{--                                                    Free Shipping--}}
+{{--                                                </label>--}}
+{{--                                            </li>--}}
                                             <li></li>
                                         </ul>
-                                        <p><a class="shipping-calculator-button" href="#">Calculate Shipping</a></p>
-
                                         <tr class="order-total">
                                             <th>Total</th>
                                             <td>
-                                                <strong><span class="amount">{{presentPrice(Cart::subtotal())}}</span></strong>
+                                                <strong><span class="amount">{{presentPrice($newSubtotal)}}</span></strong>
                                             </td>
                                         </tr>
                                         </tbody>
