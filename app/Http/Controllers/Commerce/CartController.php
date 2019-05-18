@@ -19,8 +19,9 @@ class CartController extends Controller
 
     public function store(Request $request)
     {
-
+        /**If the product already exists in the basket then you do not add it**/
            $dublicates = Product::duplicateProduct($request);
+
         if($dublicates->isNotEmpty()){
            return redirect()->route('cart.index')->with('success_message', 'Item is already is you cart!');
          }
@@ -50,3 +51,5 @@ class CartController extends Controller
         return redirect()->back()->with('success_message', 'Item was delete!');
     }
 }
+
+

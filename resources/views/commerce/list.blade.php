@@ -43,13 +43,7 @@
                                             <img src="{{$product->getImage()}}" alt="product images">
                                         </a>
                                     </div>
-                                    <div class="product__hover__info">
-                                        <ul class="product__action">
-                                            <li><a data-toggle="modal"  title="Quick View" href="{{route('show.product', $product->slug)}}"><span class="ti-plus"></span></a></li>
-                                            <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
-                                            <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
-                                        </ul>
-                                    </div>
+                                @include('commerce.partial.add_cart')
                                 </div>
                                 <div class="product__details">
                                     <h2><a href="{{route('show.product', $product->slug)}}">{{$product->name}}</a></h2>

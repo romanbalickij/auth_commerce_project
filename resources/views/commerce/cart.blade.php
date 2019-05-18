@@ -65,7 +65,7 @@
                                             </div>
 
                                         </td>
-                                        <td class="product-subtotal">{{ presentPrice($product->subtotal())}}</td>
+                                        <td class="product-subtotal">{{presentPrice($product->subtotal())}}</td>
                                         <td class="product-remove">
                                             <form action="{{route('cart.destroy', $product->rowId)}}" method="Post">
                                                 @method('DELETE')
@@ -101,7 +101,7 @@
                                         @if(session()->has('coupon'))
                                         <tr class="cart-subtotal">
                                             <th>Discount</th>
-                                            <td><span class="amount">{{presentPrice(session()->get('coupon'))}}</span></td>
+                                            <td><span class="amount">-{{presentPrice(session()->get('coupon'))}}</span></td>
                                         </tr>
                                         @endif
                                         <ul id="shipping_method">

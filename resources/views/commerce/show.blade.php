@@ -69,18 +69,18 @@
                             </div>
 
                             <ul class="pro__dtl__btn">
-                                <li class="buy__now__btn"><a href="#">buy now</a></li>
-                                <li><a href="#"><span class="ti-heart"></span></a></li>
-                                <li><a href="#"><span class="ti-email"></span></a></li>
+                                <li class="buy__now__btn">
+                                    <form action="{{route('cart.store')}}" method="POST">
+                                      @csrf
+                                        <input type="hidden" name="id" value="{{$product->id}}">
+                                        <input type="hidden" name="name" value="{{$product->name}}">
+                                        <input type="hidden" name="price" value="{{$product->price}}">
+                                        <button type="submit"  class="btn btn-secondary">Add To Cart</button>
+                                    </form>
+
+                                </li>
                             </ul>
                             <div class="pro__social__share">
-                                <h2>Share :</h2>
-                                <ul class="pro__soaial__link">
-                                    <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-google-plus"></i></a></li>
-                                </ul>
                             </div>
                         </div>
                     </div>

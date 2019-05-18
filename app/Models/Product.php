@@ -50,6 +50,7 @@ class Product extends Model
 
       return  Cart::add($product->id, $product->name, 1 , $product->price)->associate('App\Models\Product');
     }
+
     public static function duplicateProduct($product)
     {
        return  Cart::search(function ($cartItem, $rowId) use($product) {
