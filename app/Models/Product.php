@@ -29,7 +29,7 @@ class Product extends Model
     public  function getImage()
     {
         if($this->image != null) {
-            return '/commerce/upload/'.$this->image;
+            return '/commerce/image/'.$this->image;
         }
     }
 

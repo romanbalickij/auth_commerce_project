@@ -3,29 +3,38 @@
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
 
+use App\Models\Category;
 use App\Models\Product;
+use App\Models\Tag;
 use Carbon\Carbon;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
 $factory->define(Product::class, function (Faker $faker) {
 
-//
-//    $now = Carbon::now()->toDateTimeString();
-//    $str =  Str::slug('Simple Black Clock');
-//    dd([
-//
-//        Product::create([
-//            'name' => 'Simple Black Clock ' ,
-//            'slug' => $str ,
-//            'details' => [24, 25, 27][array_rand([24, 25, 27])] . ' inch, ' . [1, 2, 3][array_rand([1, 2, 3])] . ' TB SSD, 32GB RAM',
-//            'price' => rand(249999, 449999),
-//            'description' => 'Lorem '  . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
-//            'date' => $now,
-//
-//        ]),
-//
-//    ]);
+
+    $now = Carbon::now()->toDateTimeString();
+    $categoryId = Category::inRandomOrder()->get('id')->first();
+    $tagsId = Tag::inRandomOrder()->get('id')->first();
+
+     return [
+
+      $product =  Product::create([
+            'name' =>$faker->unique()->sentence($nbWords = 3, $variableNbWords = true),
+            'slug' => $faker->unique()->slug ,
+            'details' => $faker->text($maxNbChars = 40),
+            'price' => rand(249, 3000),
+            'image' => '2.png',
+            'description' => $faker->text($maxNbChars = 200),
+            'quantity' => rand(1, 10),
+            'date' => $now,
+            'views' => rand(1,20)
+
+        ])->categories()->attach($categoryId),
+
+
+
+    ];
 
 
 });

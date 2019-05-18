@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="/commerce/css/responsive.css">
     <!-- User style -->
     <link rel="stylesheet" href="/commerce/css/custom.css">
+    <link rel="stylesheet" href="/commerce/css/checkout.css">
 
 
     <!-- Modernizr JS -->

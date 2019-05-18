@@ -15,21 +15,21 @@ class ProductTableSeeder extends Seeder
     public function run()
     {
        // factory(Product::class,4)->create();
-
-        $now = Carbon::now()->toDateTimeString();
-        $str =  Str::slug('Simple Black Cfdflofdfckee');
-        // Laptops
-        for ($i=1; $i <= 10; $i++) {
-           dd( Product::create([
-
-                'name' => 'Simple Black Clockew '.$i,
-                'slug' => $str.$i,
-                'details' => [13,14,15][array_rand([13,14,15])] . ' inch, ' . [1, 2, 3][array_rand([1, 2, 3])] .' TB SSD, 32GB RAM',
-                'price' => rand(149999, 249999),
-                'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
-                'date' => $now,
-            ])->categories()->attach(3));
-        }
+//
+//        $now = Carbon::now()->toDateTimeString();
+//        $str =  Str::slug('Simple Black Cfdflofdfckee');
+//        // Laptops
+//        for ($i=1; $i <= 10; $i++) {
+//           dd( Product::create([
+//
+//                'name' => 'Simple Black Clockew '.$i,
+//                'slug' => $str.$i,
+//                'details' => [13,14,15][array_rand([13,14,15])] . ' inch, ' . [1, 2, 3][array_rand([1, 2, 3])] .' TB SSD, 32GB RAM',
+//                'price' => rand(149999, 249999),
+//                'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
+//                'date' => $now,
+//            ])->categories()->attach(3));
+//        }
 //        // Make Laptop 1 a Desktop as well. Just to test multiple categories
 //        $product = Product::find(1);
 //        $product->categories()->attach(1);
@@ -107,3 +107,5 @@ class ProductTableSeeder extends Seeder
     }
 
 }
+
+factory(Product::class,2)->create();

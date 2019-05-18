@@ -117,7 +117,7 @@
                                         </tbody>
                                     </table>
                                     <div class="wc-proceed-to-checkout">
-                                        <a href="checkout.html">Proceed to Checkout</a>
+                                        <a href="{{route('checkout.index')}}">Proceed to Checkout</a>
                                     </div>
                                 </div>
                             </div>
