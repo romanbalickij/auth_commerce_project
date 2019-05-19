@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -37,21 +38,26 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public  function generalPassword($password)
+    public function generalPassword($password)
     {
-        if($password  != null) {
+        if ($password != null) {
             $this->password = bcrypt($password);
             $this->save();
         }
     }
-
 
     public static function add($value)
     {
         $user =  new static;
         $user->fill($value);
         $user->save();
+        return $user;
     }
 
+    public function generalToken()
+    {
+        $this->email_verified = Str::random(100);
+        $this->save();
+    }
 
 }

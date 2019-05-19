@@ -25,6 +25,11 @@
     <div class="htc__login__register bg__white ptb--130">
         <div class="container">
             @include('commerce.errors.errors')
+            @if(session()->has('success_message'))
+                <div class="alert alert-success">
+                    {{session()->get('success_message')}}
+                </div>
+            @endif
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <ul class="login__register__menu" role="tablist">
