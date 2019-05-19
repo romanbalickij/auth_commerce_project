@@ -19,7 +19,7 @@
 
                 <li><a href="{{route('register.form')}}">Register</a></li>
 
-                <li><a href="">Login</a></li>
+                <li><a href="{{route('login.form')}}">Login</a></li>
 
                 </li>
         </ul>

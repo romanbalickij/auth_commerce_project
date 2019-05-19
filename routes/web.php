@@ -27,4 +27,6 @@ Route::group(['namespace' => 'Commerce'], function (){
     Route::get('/register', 'AuthController@registerForm')->name('register.form');
     Route::post('/register', 'AuthController@register')->name('register');
     Route::get('/verify/{token}', 'AuthController@verification')->name('register.verification');
+    Route::get('/login', 'AuthController@loginForm')->name('login.form');
+    Route::post('/login', 'AuthController@login')->name('login');
 });

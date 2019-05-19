@@ -56,8 +56,16 @@ class User extends Authenticatable
 
     public function generalToken()
     {
-        $this->email_verified = Str::random(100);
+        $this->token = Str::random(100);
         $this->save();
+    }
+
+    public static function verificationEmail($token)
+    {
+       $user = User::where('email_verified', $token)->firstOrFail();
+       $user->verified = 1;
+       $user->save();
+
     }
 
 }
