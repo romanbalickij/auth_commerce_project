@@ -12,13 +12,10 @@ use Illuminate\Support\Str;
 
 $factory->define(Product::class, function (Faker $faker) {
 
-
     $now = Carbon::now()->toDateTimeString();
     $categoryId = Category::inRandomOrder()->get('id')->first();
-    $tagsId = Tag::inRandomOrder()->get('id')->first();
-
+   // $tagsId = Tag::inRandomOrder()->get('id')->first();
      return [
-
       $product =  Product::create([
             'name' =>$faker->unique()->sentence($nbWords = 3, $variableNbWords = true),
             'slug' => $faker->unique()->slug ,
@@ -31,10 +28,5 @@ $factory->define(Product::class, function (Faker $faker) {
             'views' => rand(1,20)
 
         ])->categories()->attach($categoryId),
-
-
-
     ];
-
-
 });

@@ -58,7 +58,7 @@
     <div class="slider__container slider--one">
         <div class="slider__activation__wrap owl-carousel owl-theme">
             <!-- Start Single Slide -->
-            <div class="slide slider__full--screen" style="background: rgba(0, 0, 0, 0) url(/commerce/images/slider/bg/r.jpg) no-repeat scroll center center / cover ;">
+            <div class="slide slider__full--screen" style="background: rgba(0, 0, 0, 0) url(/commerce/image/1.jpg) no-repeat scroll center center / cover ;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-10 col-lg-8 col-md-offset-2 col-lg-offset-4 col-sm-12 col-xs-12">
@@ -74,7 +74,7 @@
             </div>
             <!-- End Single Slide -->
             <!-- Start Single Slide -->
-            <div class="slide slider__full--screen" style="background: rgba(0, 0, 0, 0) url(/commerce/images/slider/bg/1.jpg) no-repeat scroll center center / cover ;">
+            <div class="slide slider__full--screen" style="background: rgba(0, 0, 0, 0) url(/commerce/image/2.jpg) no-repeat scroll center center / cover ;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
@@ -118,7 +118,7 @@
                                     </div>
                                 </div>
                                 <div class="product__details">
-                                    <h2><a href="product-details.html">{{$product->name}}</a></h2>
+                                    <h2><a href="{{route('show.product', $product->slug)}}">{{$product->name}}</a></h2>
                                     <ul class="product__price">
                                         <li class="new__price">{{$product->presentPrice()}}</li>
                                     </ul>

@@ -1,6 +1,8 @@
 @extends('commerce.layout')
 
 @section('content')
+    <!-- End Cart Panel -->
+    <!-- End Offset Wrapper -->
     <!-- Start Bradcaump area -->
     <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(/commerce/images/bg/2.jpg) no-repeat scroll center center / cover ;">
         <div class="ht__bradcaump__wrap">
@@ -10,7 +12,7 @@
                         <div class="bradcaump__inner text-center">
                             <h2 class="bradcaump-title">Checkout</h2>
                             <nav class="bradcaump-inner">
-                                <a class="breadcrumb-item" href="index.html">Home</a>
+                                <a class="breadcrumb-item" href="{{route('home.index')}}">Home</a>
                                 <span class="brd-separetor">/</span>
                                 <span class="breadcrumb-item active">Checkout</span>
                             </nav>
@@ -22,10 +24,12 @@
     </div>
     <!-- End Bradcaump area -->
     <!-- Start Checkout Area -->
+
     <section class="our-checkout-area ptb--120 bg__white">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-lg-8">
+                <div class="form-group col-md-push-11">
+
                     <div class="ckeckout-left-sidebar">
                         <!-- Start Checkbox Area -->
                         <div class="checkout-form">
@@ -95,6 +99,4 @@
             </div>
         </div>
     </section>
-    <!-- End Checkout Area -->
-    <!-- Start Footer Area -->
 @endsection

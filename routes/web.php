@@ -19,6 +19,11 @@ Route::group(['namespace' => 'Commerce'], function (){
 
          /**CouponController*/
     Route::post('/coupon', 'CouponController@coupon')->name('coupon');
-       /**CheckoutController**/
+
+        /**CheckoutController**/
     Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+
+      /**AuthController**/
+    Route::get('/register', 'AuthController@registerForm')->name('register.form');
+    Route::post('/register', 'AuthController@register')->name('register');
 });

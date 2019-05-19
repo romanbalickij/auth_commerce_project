@@ -12,14 +12,23 @@
                 </ul>
             </li>
             <li class="drop"><a href="{{route('shop.index')}}">Shop</a>
-
             </li>
+            <li class="drop">
+
+                <li><a href="">Logout</a></li>
+
+                <li><a href="{{route('register.form')}}">Register</a></li>
+
+                <li><a href="">Login</a></li>
+
+                </li>
         </ul>
+
     </nav>
 </div>
 <div class="col-md-2 col-sm-4 col-xs-3">
     <ul class="menu-extra">
-        <li ><span class="ti-search"></span></li>
+        <li class="search search__open hidden-xs"><span class="ti-search"></span></li>
         <li><a href=""><span class="ti-user"></span></a></li>
         <a href="{{route('cart.index')}}">
             <li >
@@ -32,3 +41,22 @@
         </a>
     </ul>
 </div>
+<div class="offset__wrapper">
+    <!-- Start Search Popap -->
+    <div class="search__area">
+        <div class="container" >
+            <div class="row" >
+                <div class="col-md-12" >
+                    <div class="search__inner">
+                        <form action="" method="get">
+                            <input placeholder="Search here... " type="text" name="search">
+                            <button type="submit"></button>
+                        </form>
+                        <div class="search__close__btn">
+                            <span class="search__close__btn_icon"><i class="zmdi zmdi-close"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

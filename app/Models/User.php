@@ -36,4 +36,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public  function generalPassword($password)
+    {
+        if($password  != null) {
+            $this->password = bcrypt($password);
+            $this->save();
+        }
+    }
+
+
+    public static function add($value)
+    {
+        $user =  new static;
+        $user->fill($value);
+        $user->save();
+    }
+
+
 }

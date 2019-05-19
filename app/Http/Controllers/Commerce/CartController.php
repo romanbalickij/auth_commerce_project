@@ -11,6 +11,9 @@ use App\Http\Controllers\Controller;
 
 class CartController extends Controller
 {
+    /**
+    ** new coupon discount amount
+    **/
     public function index(){
 
         $newSubtotal =  Coupon::getCouponDiscount();
