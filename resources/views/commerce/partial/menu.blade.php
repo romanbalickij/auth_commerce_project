@@ -15,7 +15,7 @@
             </li>
             <li class="drop">
 
-                <li><a href="">Logout</a></li>
+                <li><a href="{{route('logout')}}">Logout</a></li>
 
                 <li><a href="{{route('register.form')}}">Register</a></li>
 

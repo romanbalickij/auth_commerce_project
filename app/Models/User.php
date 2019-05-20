@@ -62,10 +62,15 @@ class User extends Authenticatable
 
     public static function verificationEmail($token)
     {
-       $user = User::where('email_verified', $token)->firstOrFail();
+       $user = User::where('token', $token)->firstOrFail();
+       $user->token = null;
        $user->verified = 1;
        $user->save();
 
     }
 
+    public  static function  checkVerification($email)
+    {
+        return User::where('email', $email)->first();
+    }
 }
