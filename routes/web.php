@@ -30,4 +30,5 @@ Route::group(['namespace' => 'Commerce'], function (){
     Route::get('/login', 'AuthController@loginForm')->name('login.form');
     Route::post('/login', 'AuthController@login')->name('login');
     Route::get('/logout', 'AuthController@logout')->name('logout');
+    Route::get('/verify', 'AuthController@notifications')->name('verify.message');
 });

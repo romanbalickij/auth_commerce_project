@@ -60,24 +60,25 @@
                             </ul>
                             <div class="pro__dtl__color">
                                 <h2 class="title__5">Choose Colour</h2>
-                                <ul class="pro__choose__color">
-                                    <li class="red"><a href="#"><i class="zmdi zmdi-circle"></i></a></li>
-                                    <li class="blue"><a href="#"><i class="zmdi zmdi-circle"></i></a></li>
-                                    <li class="perpal"><a href="#"><i class="zmdi zmdi-circle"></i></a></li>
-                                    <li class="yellow"><a href="#"><i class="zmdi zmdi-circle"></i></a></li>
-                                </ul>
                             </div>
 
                             <ul class="pro__dtl__btn">
                                 <li class="buy__now__btn">
-                                    <form action="{{route('cart.store')}}" method="POST">
-                                      @csrf
+                                <form action="{{route('cart.store')}}" method="POST">
+                                    @csrf
+                                    <div class="col-md-111 mb-105">
+                                        <select class="form-control form-control-lg"  name="attribute_id">
+                                            @foreach($attributes as $attribute)
+                                                    <option value="{{$attribute->id}}">{{$attribute->name}}</option>
+                                            @endforeach
+                                        </select>
+                                             <br>
                                         <input type="hidden" name="id" value="{{$product->id}}">
                                         <input type="hidden" name="name" value="{{$product->name}}">
                                         <input type="hidden" name="price" value="{{$product->price}}">
                                         <button type="submit"  class="btn btn-secondary">Add To Cart</button>
-                                    </form>
-
+                                    </div>
+                                </form>
                                 </li>
                             </ul>
                             <div class="pro__social__share">

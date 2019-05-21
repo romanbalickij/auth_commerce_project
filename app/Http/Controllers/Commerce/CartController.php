@@ -22,13 +22,14 @@ class CartController extends Controller
 
     public function store(Request $request)
     {
+
         /**If the product already exists in the basket then you do not add it**/
            $dublicates = Product::duplicateProduct($request);
 
         if($dublicates->isNotEmpty()){
            return redirect()->route('cart.index')->with('success_message', 'Item is already is you cart!');
          }
-           Product::addToCart($request);
+            Product::addToCart($request);
            return redirect()->route('cart.index')->with('success_message', 'Item was added to you cart!');
     }
 

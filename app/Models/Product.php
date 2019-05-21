@@ -21,6 +21,11 @@ class Product extends Model
         return $this->belongsToMany(Tag::class, 'product_tags');
     }
 
+    public function attributes()
+    {
+        return $this->belongsToMany(Attribute::class);
+    }
+
     public function presentPrice()
     {
         return money_format('$%i', $this->price);
@@ -48,7 +53,7 @@ class Product extends Model
 
     public static function addToCart($product){
 
-      return  Cart::add($product->id, $product->name, 1 , $product->price)->associate('App\Models\Product');
+      return  Cart::add($product->id, $product->name, 1 , $product->price, ['attribute_id' => $product->attribute_id])->associate('App\Models\Product');
     }
 
     public static function duplicateProduct($product)
@@ -56,5 +61,14 @@ class Product extends Model
        return  Cart::search(function ($cartItem, $rowId) use($product) {
             return $cartItem->id ===  $product->id;
         });
+
+
     }
+
+//    public function getAttribute($id)
+//    {
+//      return self::with(['attributes' => function ($query) {
+//          $query->where('id', $id);
+//      }])->get();
+//    }
 }

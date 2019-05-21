@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->text('details');
             $table->integer('price');
             $table->string('image')->nullable();
-            $table->text('descriptions');
+            $table->text('description');
             $table->boolean('featured')->default(0);
             $table->integer('quantity')->unsigned();
             $table->timestamps();

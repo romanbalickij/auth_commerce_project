@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Commerce;
 
+use App\Models\Attribute;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -18,7 +19,8 @@ class HomeController extends Controller
      public function show($slug)
      {
          $product = Product::where('slug', $slug)->firstOrFail();
-         return view('commerce.show', compact('product'));
+         $attributes = Attribute::all();
+         return view('commerce.show', compact('product', 'attributes'));
      }
 
 }

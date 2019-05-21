@@ -28,6 +28,11 @@ class AuthController extends Controller
           return redirect()->route('login.form')->with('success_message' ,'Check your mail');
     }
 
+    public function notifications()
+    {
+        
+    }
+
     public function verification($token)
     {
        User::verificationEmail($token);
@@ -63,3 +68,5 @@ class AuthController extends Controller
 
 
 }
+
+
