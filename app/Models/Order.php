@@ -10,7 +10,7 @@ class Order extends Model
     protected $fillable = [
         'user_id', 'email', 'name', 'address', 'city','username',
         'province', 'postalcode', 'phone', 'name_on_card', 'discount',
-        'discount_code', 'subtotal',  'payment_gateway',
+         'subtotal',  'payment_gateway',
     ];
 
     public function user(){
@@ -21,6 +21,24 @@ class Order extends Model
     public function products(){
 
         return $this->belongsToMany(Product::class);
+    }
+
+    public static function createOrders($order)
+    {
+        $order =    Order::create([
+            'name'      => $order->name,
+            'user_id'   => auth()->user() ? auth()->user()->id : null,
+            'email'     => $order->email,
+            'username'  => $order->username,
+            'phone'     => $order->phone,
+            'city'      => $order->city,
+            'address'   => $order->address,
+            'province'  => $order->province,
+            'postalcode'=> $order->postalcode,
+            'discount'  => session()->get('coupon') ?? 0,
+            'subtotal'  => Coupon::getCouponDiscount(),
+        ]);
+        return $order;
     }
 
 }

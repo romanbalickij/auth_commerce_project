@@ -71,7 +71,6 @@ class User extends Authenticatable
        $user->token = null;
        $user->email_verified = 1;
        $user->save();
-
     }
 
     public static  function  checkVerification($email)
@@ -81,7 +80,5 @@ class User extends Authenticatable
             ['email_verified', '=', 1]
         ])->first();;
         return $user;
-
-
     }
 }
