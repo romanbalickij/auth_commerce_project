@@ -48,17 +48,22 @@ class AuthController extends Controller
     public function login(UserLoginRequest $request)
     {
         $user = User::checkVerification($request->get('email'));
+        if($user == null){
+         return redirect()->back()->withErrors('Please confirm your verification or register');
+      }
 
-        if($user->verified ==  null){
-            return redirect()->back()->withErrors('please check your email');
-        }
-
-        if(Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')]))
+        if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
             return redirect('/');
-        {
-            return redirect()->back()->withErrors('Invalid login or password');
-        }
+        } else
+            return redirect()->back()->withErrors('Invalid login or password ');
+
+
     }
+
+
+//
+
+
 
     public function logout()
     {

@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers\Commerce;
 
+
+use App\Http\Requests\Checkout\CheckoutRequest;
+use App\Models\Coupon;
+use App\Models\Product;
+use Cartalyst\Stripe\Laravel\Facades\Stripe;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,4 +18,15 @@ class CheckoutController extends Controller
     {
         return view('commerce.checkout');
     }
+
+    public function store(CheckoutRequest $request)
+    {
+
+
+        Product::checkoutDetailsCart($request->stripeToken, $request->email);
+        Cart::destroy();
+        return redirect()->route('cart.index')->with('success_message', 'Thank you! Your payment been successfully accepted');
+
+    }
+
 }

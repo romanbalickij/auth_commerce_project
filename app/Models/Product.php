@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,6 +26,13 @@ class Product extends Model
     {
         return $this->belongsToMany(Attribute::class);
     }
+
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class);
+    }
+
+
 
     public function presentPrice()
     {
@@ -61,14 +69,26 @@ class Product extends Model
        return  Cart::search(function ($cartItem, $rowId) use($product) {
             return $cartItem->id ===  $product->id;
         });
-
-
     }
 
-//    public function getAttribute($id)
-//    {
-//      return self::with(['attributes' => function ($query) {
-//          $query->where('id', $id);
-//      }])->get();
-//    }
+    public static function checkoutDetailsCart($token,  $email)
+    {
+        $contents = Cart::content()->map(function ($item){
+            return  $item->model->name .'-Quantity:'.$item->qty;
+        })->values()->toJson();;
+
+        $charge = Stripe::charges()->create([
+            'amount' => Coupon::getCouponDiscount(),
+            'currency' => 'USD',
+            'source'   => $token,
+            'description'   => 'Order',
+            'receipt_email'   => $email,
+            'metadata'   => [
+                'contents' => $contents,
+                'quantity' => Cart::content()->count(),
+            ],
+        ]);
+    }
+
+
 }

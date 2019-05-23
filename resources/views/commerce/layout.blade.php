@@ -11,7 +11,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="/commerce/images/favicon.ico">
     <link rel="apple-touch-icon" href="/commerce/apple-touch-icon.png">
 
-
     <!-- All css files are included here. -->
     <!-- Bootstrap fremwork main css -->
     <link rel="stylesheet" href="/commerce/css/bootstrap.min.css">
@@ -29,6 +28,7 @@
     <!-- User style -->
     <link rel="stylesheet" href="/commerce/css/custom.css">
     <link rel="stylesheet" href="/commerce/css/checkout.css">
+    <link rel="stylesheet" href="/commerce/css/stripe.css">
 
 
     <!-- Modernizr JS -->
@@ -309,11 +309,6 @@
     </footer>
     <!-- End Footer Area -->
 </div>
-<!-- Body main wrapper end -->
-<!-- QUICKVIEW PRODUCT -->
-
-<!-- END QUICKVIEW PRODUCT -->
-<!-- Placed js at the end of the document so the pages load faster -->
 
 <!-- jquery latest version -->
 <script src="/commerce/js/vendor/jquery-1.12.0.min.js"></script>
@@ -327,6 +322,8 @@
 <script src="/commerce/js/waypoints.min.js"></script>
 <!-- Main js file that contents all jQuery plugins activation. -->
 <script src="/commerce/js/main.js"></script>
+<!-- js file for stripe cart include-->
+<script src="https://js.stripe.com/v3/"></script>
 
 @yield('js')
 

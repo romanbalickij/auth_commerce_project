@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','token'
     ];
 
     /**
@@ -46,6 +46,11 @@ class User extends Authenticatable
         }
     }
 
+    public function order(){
+
+        return $this->hasMany(Order::class);
+    }
+
     public static function add($value)
     {
         $user =  new static;
@@ -64,13 +69,19 @@ class User extends Authenticatable
     {
        $user = User::where('token', $token)->firstOrFail();
        $user->token = null;
-       $user->verified = 1;
+       $user->email_verified = 1;
        $user->save();
 
     }
 
-    public  static function  checkVerification($email)
+    public static  function  checkVerification($email)
     {
-        return User::where('email', $email)->first();
+        $user = User::where([
+            ['email', '=',  $email],
+            ['email_verified', '=', 1]
+        ])->first();;
+        return $user;
+
+
     }
 }

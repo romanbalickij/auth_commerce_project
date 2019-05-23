@@ -22,6 +22,7 @@ Route::group(['namespace' => 'Commerce'], function (){
 
         /**CheckoutController**/
     Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+    Route::post('/checkout','CheckoutController@store')->name('checkout.store');
 
       /**AuthController**/
     Route::get('/register', 'AuthController@registerForm')->name('register.form');

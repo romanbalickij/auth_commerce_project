@@ -14,13 +14,13 @@
             <li class="drop"><a href="{{route('shop.index')}}">Shop</a>
             </li>
             <li class="drop">
-
+            @if(Auth::check())
                 <li><a href="{{route('logout')}}">Logout</a></li>
-
+            @else
                 <li><a href="{{route('register.form')}}">Register</a></li>
 
                 <li><a href="{{route('login.form')}}">Login</a></li>
-
+            @endif
                 </li>
         </ul>
 
