@@ -12,16 +12,14 @@ class ShopController extends Controller
 {
 
     public function index(Request $request){
-
-        if($request->get('sort') == null) {
-            $products = Product::orderBy('created_at', 'desc')->paginate(5);
-         } else {
-            $products = Product::sortByProducts($request->get('sort'));
-
-         }
-            $categories = Category::all();
-            $tags = Tag::all();
-            return view('commerce.shop', compact('products', 'categories', 'tags'));
+     if($request->get('sort') == null) {
+        $products = Product::orderBy('created_at', 'desc')->paginate(5);
+     } else {
+        $products = Product::sortByProducts($request->get('sort'));
+     }
+        $categories = Category::all();
+        $tags = Tag::all();
+        return view('commerce.shop', compact('products', 'categories', 'tags'));
     }
 
     public function category($slug)
@@ -34,10 +32,14 @@ class ShopController extends Controller
     public function tags($slug)
     {
       $tags = Tag::where('slug', $slug)->firstOrFail();
-      $products = $tags->products()->paginate(5);
+      $products = $tags->products()->paginate(6);
       return view( 'commerce.list', compact('products'));
     }
 
-
+    public function search(Request $request)
+    {
+       $products = Product::searchProducts($request);
+       return view('commerce.search_list', compact('products'));
+    }
 
 }

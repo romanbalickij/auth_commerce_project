@@ -10,6 +10,7 @@ Route::group(['namespace' => 'Commerce'], function (){
     Route::post('/shop', 'ShopController@index')->name('shop.sort');
     Route::get('/category/{slug}', 'ShopController@category')->name('shop.category');
     Route::get('/tag/{slug}', 'ShopController@tags')->name('shop.tag');
+    Route::post('/search', 'ShopController@search')->name('search');
 
          /**CartController**/
     Route::get('/cart', 'CartController@index')->name('cart.index');

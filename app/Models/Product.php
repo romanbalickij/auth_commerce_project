@@ -5,12 +5,31 @@ namespace App\Models;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Database\Eloquent\Model;
+use Nicolaslopezj\Searchable\SearchableTrait;
+
 
 class Product extends Model
 {
 
+    use SearchableTrait;
+
     protected $fillable = [
         'name', 'slug', 'details', 'price', 'description', 'updated_at', 'created_at'
+    ];
+
+    protected $searchable = [
+        /**
+         * Columns and their priority in search results.
+         * Columns with higher values are more important.
+         * Columns with equal values have equal importance.
+         *
+         * @var array
+         */
+        'columns' => [
+            'products.name'    => 10,
+            'products.details' => 10,
+            'products.price'   => 10,
+        ],
     ];
 
     public function categories(){
@@ -59,6 +78,10 @@ class Product extends Model
         }
     }
 
+    public static function searchProducts($product){
+       return self::search($product->search)->paginate(5);
+    }
+
     public static function addToCart($product){
 
       return  Cart::add($product->id, $product->name, 1 , $product->price, ['attribute_id' => $product->attribute_id])->associate('App\Models\Product');
@@ -69,6 +92,14 @@ class Product extends Model
        return  Cart::search(function ($cartItem, $rowId) use($product) {
             return $cartItem->id ===  $product->id;
         });
+    }
+
+    public static function getProductInCart()
+    {
+        foreach (Cart::content() as $product)
+        {
+            return $product;
+        }
     }
 
     public static function checkoutDetailsCart($token,  $email)

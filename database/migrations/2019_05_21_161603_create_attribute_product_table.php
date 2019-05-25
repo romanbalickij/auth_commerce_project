@@ -14,11 +14,11 @@ class CreateAttributeProductTable extends Migration
     public function up()
     {
         Schema::create('attribute_product', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('attribute_id');
-            $table->foreign('attribute_id')->references('id')->on('attributes');
+            $table->increments('id');
+            $table->unsignedInteger('attribute_id');
+            $table->unsignedInteger('product_id');
 
-            $table->unsignedBigInteger('product_id');
+            $table->foreign('attribute_id')->references('id')->on('attributes');
             $table->foreign('product_id')->references('id')->on('products');
 
             $table->timestamps();

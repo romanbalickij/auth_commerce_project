@@ -7,25 +7,6 @@
         <div class="body__overlay"></div>
         <!-- Start Offset Wrapper -->
         <div class="offset__wrapper">
-            <!-- Start Search Popap -->
-            <div class="search__area">
-                <div class="container" >
-                    <div class="row" >
-                        <div class="col-md-12" >
-                            <div class="search__inner">
-                                <form action="#" method="POST">
-                                    <input placeholder="Search here... " type="text">
-                                    <button type="submit"></button>
-                                </form>
-                                <div class="search__close__btn">
-                                    <span class="search__close__btn_icon"><i class="zmdi zmdi-close"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Search Popap -->
 
         </div>
         <!-- End Offset Wrapper -->
@@ -95,16 +76,16 @@
                             </div>
                             <!-- End Product Cat -->
                             <!-- Start Color Cat -->
-                            <div class="htc__shop__cat">
-                                <h4 class="section-title-4">CHOOSE COLOUR</h4>
-                                <ul class="sidebar__list">
-                                    <li class="black"><a href="#"><i class="zmdi zmdi-circle"></i>Black<span>3</span></a></li>
-                                    <li class="blue"><a href="#"><i class="zmdi zmdi-circle"></i>Blue <span>4</span></a></li>
-                                    <li class="brown"><a href="#"><i class="zmdi zmdi-circle"></i>Brown <span>3</span></a></li>
-                                    <li class="red"><a href="#"><i class="zmdi zmdi-circle"></i>Red <span>6</span></a></li>
-                                    <li class="orange"><a href="#"><i class="zmdi zmdi-circle"></i>Orange <span>10</span></a></li>
-                                </ul>
-                            </div>
+{{--                            <div class="htc__shop__cat">--}}
+{{--                                <h4 class="section-title-4">CHOOSE COLOUR</h4>--}}
+{{--                                <ul class="sidebar__list">--}}
+{{--                                    <li class="black"><a href="#"><i class="zmdi zmdi-circle"></i>Black<span>3</span></a></li>--}}
+{{--                                    <li class="blue"><a href="#"><i class="zmdi zmdi-circle"></i>Blue <span>4</span></a></li>--}}
+{{--                                    <li class="brown"><a href="#"><i class="zmdi zmdi-circle"></i>Brown <span>3</span></a></li>--}}
+{{--                                    <li class="red"><a href="#"><i class="zmdi zmdi-circle"></i>Red <span>6</span></a></li>--}}
+{{--                                    <li class="orange"><a href="#"><i class="zmdi zmdi-circle"></i>Orange <span>10</span></a></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
                             <!-- End Color Cat -->
                             <!-- Start Tag Area -->
                             <div class="htc__shop__cat">

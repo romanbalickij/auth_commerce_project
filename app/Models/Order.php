@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
 
+    protected $casts = [
+        'properties' => 'array'
+    ];
+
     protected $fillable = [
         'user_id', 'email', 'name', 'address', 'city','username',
         'province', 'postalcode', 'phone', 'name_on_card', 'discount',
@@ -14,12 +18,10 @@ class Order extends Model
     ];
 
     public function user(){
-
         return $this->belongsTo(User::class);
     }
 
     public function products(){
-
         return $this->belongsToMany(Product::class);
     }
 
@@ -41,4 +43,8 @@ class Order extends Model
         return $order;
     }
 
+    public function createOrderProductTable($id, $quantity)
+    {
+        $this->products()->attach($id, ['quantity'=> $quantity, 'properties' => '1']);
+    }
 }

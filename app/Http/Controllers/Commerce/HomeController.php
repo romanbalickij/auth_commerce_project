@@ -12,8 +12,8 @@ class HomeController extends Controller
 
      public function index()
      {
-           $products = Product::inRandomOrder()->take(8)->get();
-           return view('commerce.index', compact('products'));
+       $products = Product::inRandomOrder()->take(8)->get();
+       return view('commerce.index', compact('products'));
      }
 
      public function show($slug)
