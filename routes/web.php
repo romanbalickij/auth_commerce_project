@@ -33,4 +33,8 @@ Route::group(['namespace' => 'Commerce'], function (){
     Route::post('/login', 'AuthController@login')->name('login');
     Route::get('/logout', 'AuthController@logout')->name('logout');
     Route::get('/verify', 'AuthController@notifications')->name('verify.message');
+
+     /**SocialiteController*/
+    Route::get('login/github', 'SocialiteController@redirectToProvider');
+    Route::get('login/github/callback', 'SocialiteController@handleProviderCallback');
 });

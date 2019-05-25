@@ -21,16 +21,11 @@ class AuthController extends Controller
 
     public function register(UsersRegisterRequest $request)
     {
-          $user = User::add($request->all());
-          $user->generalPassword($request->get('password'));
-          $user->generalToken();
-          Mail::to($user)->send(new UserRegisterMail($user));
-          return redirect()->route('login.form')->with('success_message' ,'Check your mail');
-    }
-
-    public function notifications()
-    {
-        
+      $user = User::add($request->all());
+      $user->generalPassword($request->get('password'));
+      $user->generalToken();
+      Mail::to($user)->send(new UserRegisterMail($user));
+      return redirect()->route('login.form')->with('success_message' ,'Check your mail');
     }
 
     public function verification($token)
@@ -56,14 +51,7 @@ class AuthController extends Controller
             return redirect('/');
         } else
             return redirect()->back()->withErrors('Invalid login or password ');
-
-
     }
-
-
-//
-
-
 
     public function logout()
     {

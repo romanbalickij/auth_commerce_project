@@ -104,8 +104,6 @@
                             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                                 <div class="producy__view__container">
                                     <!-- Start Short Form -->
-
-
                                     <!-- End List And Grid View -->
                                 </div>
                             </div>
@@ -146,8 +144,5 @@
             </div>
         </section>
         <!-- End Our ShopSide Area -->
-        <!-- Start Footer Area -->
-
-        <!-- End Footer Area -->
     </div>
 @endsection
