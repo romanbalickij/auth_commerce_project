@@ -37,8 +37,8 @@ class SocialiteController extends Controller
                 'provider_id' => $gitHub->id
             ]);
         }
-
          Auth::login($user,true);
          return redirect()->route('home.index');
     }
 }
+

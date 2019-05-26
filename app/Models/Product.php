@@ -14,7 +14,7 @@ class Product extends Model
     use SearchableTrait;
 
     protected $fillable = [
-        'name', 'slug', 'details', 'price', 'description', 'updated_at', 'created_at'
+        'name', 'slug', 'details', 'price', 'description', 'updated_at', 'created_at','quantity'
     ];
 
     protected $searchable = [
@@ -121,5 +121,10 @@ class Product extends Model
         ]);
     }
 
+    public static function  decreaseQuantities()
+    {
+        $product = Product::findOrFail(self::getproductInCart()->id);
+        $product->update(['quantity' => $product->quantity - self::getproductInCart()->qty]);
+    }
 
 }

@@ -53,7 +53,6 @@
                                 </div>
                                 <div class="htc__login__btn mt--30">
                                    <button type="submit" class="btn btn-secondary">Login</button>
-
                                 </div>
                             </form>
                             <div class="htc__social__connect">
@@ -73,12 +72,10 @@
                                         </span>
                                       GitHub
                                     </a>
-
                                 </ul>
                             </div>
                         </div>
                         <!-- End Single Content -->
-
                         <!-- End Single Content -->
                     </div>
                 </div>
