@@ -127,4 +127,12 @@ class Product extends Model
         $product->update(['quantity' => $product->quantity - self::getproductInCart()->qty]);
     }
 
+    public static function  productsAreNoLongerAvailable(){
+        $product = Product::findOrFail(self::getproductInCart()->id);
+        if($product->quantity < 10) {
+           return false;
+        }
+          return true;
+    }
+
 }

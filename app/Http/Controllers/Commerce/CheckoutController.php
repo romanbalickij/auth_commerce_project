@@ -20,6 +20,10 @@ class CheckoutController extends Controller
 
     public function store(CheckoutRequest $request)
     {
+
+        if(Product::productsAreNoLongerAvailable()) {
+            return  back()->withErrors('Sorry! on of the product in your cart is no longer  available');
+        }
         $order =  Order::createOrders($request);
         $order->createOrderProductTable(Product::getProductInCart()->id, Product::getProductInCart()->qty);
         Product:: decreaseQuantities();
