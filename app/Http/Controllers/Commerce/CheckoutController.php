@@ -20,7 +20,6 @@ class CheckoutController extends Controller
 
     public function store(CheckoutRequest $request)
     {
-
         if(Product::productsAreNoLongerAvailable()) {
             return  back()->withErrors('Sorry! on of the product in your cart is no longer  available');
         }
@@ -31,7 +30,6 @@ class CheckoutController extends Controller
         Cart::destroy();
         session()->forget('coupon');
         return redirect()->route('cart.index')->with('success_message', 'Thank you! Your payment been successfully accepted');
-
     }
 
 }

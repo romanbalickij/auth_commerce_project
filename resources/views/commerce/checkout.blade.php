@@ -59,8 +59,12 @@
                             </div>
                         </div>
                         <!-- End Checkbox Area -->
+
                         <!-- Start Payment Box -->
                         <div class="col-md-5">
+
+                           <h3><a href="{{route('register.form')}}">Create Account</a></h3>
+
                             <div class="payment-form">
                                 <h2 class="section-title-3">payment details</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur </p>

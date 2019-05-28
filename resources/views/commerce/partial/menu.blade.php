@@ -2,7 +2,6 @@
     <nav class="mainmenu__nav hidden-xs hidden-sm">
         <ul class="main__menu">
             <li class="drop"><a href="{{route('home.index')}}">Home</a>
-
             </li>
             <li class="drop"><a href="blog.html">Blog</a>
                 <ul class="dropdown">
@@ -23,13 +22,14 @@
             @endif
                 </li>
         </ul>
-
     </nav>
 </div>
 <div class="col-md-2 col-sm-4 col-xs-3">
     <ul class="menu-extra">
         <li class="search search__open hidden-xs"><span class="ti-search"></span></li>
-        <li><a href=""><span class="ti-user"></span></a></li>
+       @if(Auth::check())
+           <li><a href="{{route('account.index')}}"><span class="ti-user"></span></a></li>
+       @endif
         <a href="{{route('cart.index')}}">
             <li >
                 <span class="ti-shopping-cart">

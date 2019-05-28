@@ -42,13 +42,14 @@
                             </div>
                             <div class="pro__dtl__rating">
                                 <ul class="pro__rating">
-                                    <li><span class="ti-star"></span></li>
-                                    <li><span class="ti-star"></span></li>
-                                    <li><span class="ti-star"></span></li>
-                                    <li><span class="ti-star"></span></li>
-                                    <li><span class="ti-star"></span></li>
                                 </ul>
-                                <span class="rat__qun">(Based on 0 Ratings)</span>
+                                <span class="rat__qun">
+                                <div class="pro__dtl__rating">
+                                    <div>
+                                        <div class="badge badge-success">{{$product->getStock()}}</div>
+                                    </div>
+                                </div>
+                                </span>
                             </div>
                             <div class="pro__details">
                                 <p>
@@ -76,7 +77,9 @@
                                         <input type="hidden" name="id" value="{{$product->id}}">
                                         <input type="hidden" name="name" value="{{$product->name}}">
                                         <input type="hidden" name="price" value="{{$product->price}}">
-                                        <button type="submit"  class="btn btn-secondary">Add To Cart</button>
+                                      @if($product->quantity > 0)
+                                         <button type="submit"  class="btn btn-secondary">Add To Cart</button>
+                                      @endif
                                     </div>
                                 </form>
                                 </li>

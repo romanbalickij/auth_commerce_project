@@ -34,26 +34,32 @@
                 <div class="row">
                     <div class="product__list another-product-style">
                         <!-- Start Single Product -->
-                       @foreach($products  as $product)
-                             <div class="col-md-3 single__pro col-lg-3 cat--1 col-sm-4 col-xs-12">
-                            <div class="product foo">
-                                <div class="product__inner">
-                                    <div class="pro__thumb">
-                                        <a href="#">
-                                            <img src="{{$product->getImage()}}" alt="product images">
-                                        </a>
+                        @if($products->isNotEmpty())
+                          @foreach($products  as $product)
+                                <div class="col-md-3 single__pro col-lg-3 cat--1 col-sm-4 col-xs-12">
+                                    <div class="product foo">
+                                        <div class="product__inner">
+                                            <div class="pro__thumb">
+                                                <a href="#">
+                                                    <img src="{{$product->getImage()}}" alt="product images">
+                                                </a>
+                                            </div>
+                                            @include('commerce.partial.add_cart')
+                                        </div>
+                                        <div class="product__details">
+                                            <h2>
+                                                <a href="{{route('show.product', $product->slug)}}">{{$product->name}}</a>
+                                            </h2>
+                                            <ul class="product__price">
+                                                <li class="new__price">{{$product->presentPrice()}}</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                @include('commerce.partial.add_cart')
                                 </div>
-                                <div class="product__details">
-                                    <h2><a href="{{route('show.product', $product->slug)}}">{{$product->name}}</a></h2>
-                                    <ul class="product__price">
-                                        <li class="new__price">{{$product->presentPrice()}}</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                       @endforeach
+                          @endforeach
+                        @else
+                            <h2>products are not in this category</h2>
+                        @endif
                         <!-- End Single Product -->
                         <!-- End Single Product -->
                     </div>

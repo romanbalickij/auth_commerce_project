@@ -129,10 +129,19 @@ class Product extends Model
 
     public static function  productsAreNoLongerAvailable(){
         $product = Product::findOrFail(self::getproductInCart()->id);
-        if($product->quantity < 10) {
-           return false;
+        $productInCart = self::getproductInCart()->qty;
+        if($product->quantity < $productInCart) {
+           return true;
         }
-          return true;
+           return false;
+    }
+
+    public function getStock()
+    {
+        if($this->quantity > 0){
+            return 'In Stocks';
+        }
+            return 'End Stocks';
     }
 
 }
