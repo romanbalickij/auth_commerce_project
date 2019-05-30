@@ -43,7 +43,7 @@
                                     <tr>
                                         <th class="product-thumbnail">Image</th>
                                         <th class="product-name">Product</th>
-                                        <th class="product-color">Color</th>
+                                        <th class="product-color">Attribute</th>
                                         <th class="product-price">Price</th>
                                         <th class="product-quantity">Quantity</th>
                                         <th class="product-subtotal">Total</th>
@@ -52,10 +52,17 @@
                                     </thead>
                                     <tbody>
                              @foreach(Cart::content() as $product)
+
                                     <tr>
                                         <td class="product-thumbnail"><a href="{{route('show.product', $product->model->slug)}}"><img src="{{$product->model->getImage()}}" alt="product img" /></a></td>
                                         <td class="product-name"><a href="{{route('show.product', $product->model->slug)}}">{{$product->name}}</a></td>
-                                        <td class="product-color">{{getAttribute($product->options->attribute_id)}}</td>
+                                        <td class="product-color">
+                                         @foreach($product->options->attributes as $productAttributes)
+                                             <ul>
+                                                 <li>{{$productAttributes}}</li>
+                                             </ul>
+                                         @endforeach
+                                        </td>
                                         <td class="product-price"><span class="amount">{{$product->model->presentPrice()}}</span></td>
                                         <td class="product-quantity">
                                             <div>

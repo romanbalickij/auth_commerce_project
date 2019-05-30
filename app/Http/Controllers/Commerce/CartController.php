@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Commerce;
 
 
+use App\Http\Requests\Cart\AttributeRequest;
+use App\Models\AttributeValue;
 use App\Models\Coupon;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -20,8 +22,37 @@ class CartController extends Controller
         return view('commerce.cart', compact('newSubtotal'));
     }
 
-    public function store(Request $request)
+    public function store(AttributeRequest $request)
     {
+
+         /**знаходим  в  табициі attribute_values  ПО ID АТРИБУТУ
+          * поля  attrivute_id and
+          * value
+           витягуєм  їх і вставляєм  в таблицб продук варіант
+
+          * далі потрбіно з таблиці
+          *
+          */
+
+
+            $attributeVariants = AttributeValue::findOrFail($request->get('attribute'));
+
+            $productAttribute = [];
+        foreach ($attributeVariants as $attributeVariant)
+        {
+            foreach ($attributeVariant->attribute()->get() as $attbite){
+
+
+             $productAttribute[] =  $attbite->name.'-'.$attributeVariant->value;
+            }
+        }
+
+//                foreach ($attributeVariant as $productAttribute)
+//                {
+//
+//                    Product::find(1)->attributes()
+//                        ->attach($productAttribute->id, ['name'=> $productAttribute->value ]);
+//                }
 
         /**If the product already exists in the basket then you do not add it**/
            $dublicates = Product::duplicateProduct($request);
@@ -29,7 +60,7 @@ class CartController extends Controller
         if($dublicates->isNotEmpty()){
            return redirect()->route('cart.index')->with('success_message', 'Item is already is you cart!');
          }
-            Product::addToCart($request);
+            Product::addToCart($request,$productAttribute);
            return redirect()->route('cart.index')->with('success_message', 'Item was added to you cart!');
     }
 

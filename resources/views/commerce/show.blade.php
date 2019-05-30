@@ -1,6 +1,7 @@
 @extends('commerce.layout')
 
 @section('content')
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(/commerce/images/bg/2.jpg) no-repeat scroll center center / cover ;">
         <div class="ht__bradcaump__wrap">
@@ -23,6 +24,7 @@
     <!-- End Bradcaump area -->
     <!-- Start Product Details -->
     <section class="htc__product__details pt--100 pb--100 bg__white">
+        @include('commerce.errors.errors')
         <div class="container">
             <div class="scroll-active">
                 <div class="row">
@@ -59,28 +61,40 @@
                             <ul class="pro__dtl__prize">
                                 <li>{{$product->presentPrice()}}</li>
                             </ul>
-                            <div class="pro__dtl__color">
-                                <h2 class="title__5">Choose Colour</h2>
-                            </div>
+{{--                            <div class="pro__dtl__color">--}}
+{{--                                <h2 class="title__5">Choose Colour and Size</h2>--}}
+{{--                            </div>--}}
 
                             <ul class="pro__dtl__btn">
                                 <li class="buy__now__btn">
+
                                 <form action="{{route('cart.store')}}" method="POST">
                                     @csrf
                                     <div class="col-md-111 mb-105">
-                                        <select class="form-control form-control-lg"  name="attribute_id">
-                                            @foreach($attributes as $attribute)
-                                                    <option value="{{$attribute->id}}">{{$attribute->name}}</option>
-                                            @endforeach
-                                        </select>
-                                             <br>
-                                        <input type="hidden" name="id" value="{{$product->id}}">
-                                        <input type="hidden" name="name" value="{{$product->name}}">
-                                        <input type="hidden" name="price" value="{{$product->price}}">
-                                      @if($product->quantity > 0)
-                                         <button type="submit"  class="btn btn-secondary">Add To Cart</button>
-                                      @endif
+
+                                    @foreach($attributes as  $attribute)
+                                            <div class="pro__dtl__color">
+                                                <h2 class="title__5">Choose {{$attribute->name}}</h2>
+                                            </div>
+
+                                        @foreach($attribute->values as $attributeValue)
+
+                                                <div class="form-check form-check-inline">
+                                                    <input type="checkbox" name="attribute[]" value="{{$attributeValue->id}}"  class="form-check-input" id="materialInline1">
+                                                    <label class="form-check-label" for="materialInline1">{{$attributeValue->value}}</label>
+                                                </div>
+                                        @endforeach
+                                    @endforeach
+
                                     </div>
+                                    <br>
+                                    <input type="hidden" name="id" value="{{$product->id}}">
+                                    <input type="hidden" name="name" value="{{$product->name}}">
+                                    <input type="hidden" name="price" value="{{$product->price}}">
+                                    @if($product->quantity > 0)
+                                        <button type="submit"  class="btn btn-secondary">Add To Cart</button>
+                                    @endif
+
                                 </form>
                                 </li>
                             </ul>
@@ -241,7 +255,5 @@
         </div>
     </section>
     <!-- End Product tab -->
-    <!-- Start Footer Area -->
-
 
 @endsection

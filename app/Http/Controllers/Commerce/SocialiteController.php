@@ -38,7 +38,7 @@ class SocialiteController extends Controller
             ]);
         }
          Auth::login($user,true);
-         return redirect()->route('home.index');
+         return redirect()->route('account.index');
     }
 }
 

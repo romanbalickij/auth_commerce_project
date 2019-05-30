@@ -11,6 +11,9 @@ use Nicolaslopezj\Searchable\SearchableTrait;
 class Product extends Model
 {
 
+    protected $table = 'products';
+    public $timestamps = false;
+
     use SearchableTrait;
 
     protected $fillable = [
@@ -43,8 +46,9 @@ class Product extends Model
 
     public function attributes()
     {
-        return $this->belongsToMany(Attribute::class);
+        return $this->belongsToMany(Attribute::class,'product_variants');
     }
+
 
     public function orders()
     {
@@ -82,9 +86,12 @@ class Product extends Model
        return self::search($product->search)->paginate(5);
     }
 
-    public static function addToCart($product){
+    public static function addToCart($product, $productAttribute){
 
-      return  Cart::add($product->id, $product->name, 1 , $product->price, ['attribute_id' => $product->attribute_id])->associate('App\Models\Product');
+
+
+     // return  Cart::add($product->id, $product->name, 1 , $product->price)->associate('App\Models\Product');
+     return   Cart::add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->price, 'options' => ['attributes' => $productAttribute]])->associate('App\Models\Product');
     }
 
     public static function duplicateProduct($product)
