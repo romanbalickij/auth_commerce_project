@@ -48,7 +48,7 @@ class AuthController extends Controller
       }
 
         if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
-            return redirect('account.index');
+            return redirect()->route('account.index');
         } else
             return redirect()->back()->withErrors('Invalid login or password ');
     }

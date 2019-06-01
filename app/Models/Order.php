@@ -45,6 +45,6 @@ class Order extends Model
 
     public function createOrderProductTable($id, $quantity)
     {
-        $this->products()->attach($id, ['quantity'=> $quantity, 'properties' => '1']);
+       $this->products()->attach($id, ['quantity'=> $quantity]);
     }
 }

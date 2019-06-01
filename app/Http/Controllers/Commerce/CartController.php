@@ -19,39 +19,21 @@ class CartController extends Controller
     public function index(){
 
         $newSubtotal =  Coupon::getCouponDiscount();
+
+
         return view('commerce.cart', compact('newSubtotal'));
     }
 
     public function store(AttributeRequest $request)
     {
-
-         /**знаходим  в  табициі attribute_values  ПО ID АТРИБУТУ
-          * поля  attrivute_id and
-          * value
-           витягуєм  їх і вставляєм  в таблицб продук варіант
-
-          * далі потрбіно з таблиці
-          *
-          */
+        $productAttribute = AttributeValue::findAttributesValues($request->get('attribute'));
 
 
-            $attributeVariants = AttributeValue::findOrFail($request->get('attribute'));
-
-            $productAttribute = [];
-        foreach ($attributeVariants as $attributeVariant)
-        {
-            foreach ($attributeVariant->attribute()->get() as $attbite){
-
-
-             $productAttribute[] =  $attbite->name.'-'.$attributeVariant->value;
-            }
-        }
-
-//                foreach ($attributeVariant as $productAttribute)
+//                foreach ($productAttribute as $attribute)
 //                {
 //
 //                    Product::find(1)->attributes()
-//                        ->attach($productAttribute->id, ['name'=> $productAttribute->value ]);
+//                        ->attach($attribute->attribute_id, ['name'=> $attribute->value ]);
 //                }
 
         /**If the product already exists in the basket then you do not add it**/
@@ -60,6 +42,8 @@ class CartController extends Controller
         if($dublicates->isNotEmpty()){
            return redirect()->route('cart.index')->with('success_message', 'Item is already is you cart!');
          }
+            $productAttribute = AttributeValue::getProductAttribute($productAttribute);
+
             Product::addToCart($request,$productAttribute);
            return redirect()->route('cart.index')->with('success_message', 'Item was added to you cart!');
     }

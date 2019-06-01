@@ -58,9 +58,10 @@
                                         <td class="product-name"><a href="{{route('show.product', $product->model->slug)}}">{{$product->name}}</a></td>
                                         <td class="product-color">
                                          @foreach($product->options->attributes as $productAttributes)
-                                             <ul>
-                                                 <li>{{$productAttributes}}</li>
-                                             </ul>
+                                            <p>
+                                                <b>{{$productAttributes['attributeName']}}:</b>
+                                                 {{$productAttributes['attributeValue']}}
+                                            </p>
                                          @endforeach
                                         </td>
                                         <td class="product-price"><span class="amount">{{$product->model->presentPrice()}}</span></td>

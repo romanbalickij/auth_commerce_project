@@ -27,4 +27,12 @@ class AttributeRequest extends FormRequest
             'attribute' => 'required',
         ];
     }
+
+
+    public function messages()
+    {
+        return [
+            'attribute.required' => 'Select the attribute for this product !',
+        ];
+    }
 }

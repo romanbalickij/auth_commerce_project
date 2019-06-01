@@ -15,6 +15,7 @@ class CheckoutController extends Controller
 
     public function index()
     {
+        Product::getProductInCart();
         return view('commerce.checkout');
     }
 
@@ -25,6 +26,7 @@ class CheckoutController extends Controller
         }
         $order =  Order::createOrders($request);
         $order->createOrderProductTable(Product::getProductInCart()->id, Product::getProductInCart()->qty);
+
         Product:: decreaseQuantities();
         Product::checkoutDetailsCart($request->stripeToken, $request->email);
         Cart::destroy();

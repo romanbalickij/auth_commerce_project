@@ -87,9 +87,6 @@ class Product extends Model
     }
 
     public static function addToCart($product, $productAttribute){
-
-
-
      // return  Cart::add($product->id, $product->name, 1 , $product->price)->associate('App\Models\Product');
      return   Cart::add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->price, 'options' => ['attributes' => $productAttribute]])->associate('App\Models\Product');
     }
