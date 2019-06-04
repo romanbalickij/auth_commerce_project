@@ -36,24 +36,21 @@
                                         <th class="product-name"><span class="nobr">Product Name</span></th>
                                         <th class="product-price"><span class="nobr"> Unit Price </span></th>
                                         <th class="product-stock-stauts"><span class="nobr"> Stock Status </span></th>
-                                        <th class="product-add-to-cart"><span class="nobr">Add To Cart</span></th>
+                                        <th class="product-add-to-cart"><span class="nobr">Quick View</span></th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($products as $product)
                                         <tr>
-                                            <td class="product-thumbnail"><a href="{{route('show.product', $product->slug)}}"><img src="{{$product->getImage()}}" alt="" /></a></td>
-                                            <td class="product-name"><a href="{{route('show.product', $product->slug)}}">{{$product->name}}</a></td>
+                                            <td class="product-thumbnail"><img src="{{$product->getImage()}}" alt="" /></td>
+                                            <td class="product-name">{{$product->name}}</td>
                                             <td class="product-price"><span class="amount">{{$product->presentPrice($product->price)}}</span></td>
-                                            <td class="product-stock-status"><span class="wishlist-in-stock">тут буде остаток товару </span></td>
+                                            <td class="product-stock-status"><span class="wishlist-in-stock">{{$product->getStock()}} </span></td>
                                             <td class="product-add-to-cart">
-                                                <form method="post" action="{{route('cart.store')}}">
-                                                    @csrf
-                                                    <input type="hidden" name="id" value="{{$product->id}}">
-                                                    <input type="hidden" name="name" value="{{$product->name}}">
-                                                    <input type="hidden" name="price" value="{{$product->price}}">
-                                                    <button type="submit" class="btn btn-outline-dark"> <span class="ti-shopping-cart"></span></button>
-                                                </form>
+                                                <ul class="product__action">
+                                                    <li><a data-toggle="modal"  title="Quick View" class="quick-view modal-view detail-link"
+                                                           href="{{route('show.product', $product->slug)}}"><span class="ti-plus"></span></a></li>
+                                                </ul>
                                             </td>
                                         </tr>
                                     @endforeach

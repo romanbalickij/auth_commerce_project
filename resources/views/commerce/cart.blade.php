@@ -60,7 +60,7 @@
                                          @foreach($product->options->attributes as $productAttributes)
                                             <p>
                                                 <b>{{$productAttributes['attributeName']}}:</b>
-                                                 {{$productAttributes['attributeValue']}}
+                                                   {{$productAttributes['attributeValue']}}
                                             </p>
                                          @endforeach
                                         </td>

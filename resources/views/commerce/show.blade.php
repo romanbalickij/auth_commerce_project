@@ -32,7 +32,7 @@
                         <div class="product__details__container product-details-5">
                             <div class="scroll-single-product mb--30">
 
-                                <img src="{{$product->getImage()}}" alt="full-image">
+                                <img src="{{$product->getImage()}}" style="height: 800px; width: 650px" alt="full-image">
                             </div>
 
                         </div>
@@ -61,22 +61,15 @@
                             <ul class="pro__dtl__prize">
                                 <li>{{$product->presentPrice()}}</li>
                             </ul>
-{{--                            <div class="pro__dtl__color">--}}
-{{--                                <h2 class="title__5">Choose Colour and Size</h2>--}}
-{{--                            </div>--}}
-
                             <ul class="pro__dtl__btn">
                                 <li class="buy__now__btn">
-
                                 <form action="{{route('cart.store')}}" method="POST">
                                     @csrf
                                     <div class="col-md-111 mb-105">
-
                                     @foreach($attributes as  $attribute)
                                             <div class="pro__dtl__color">
                                                 <h2 class="title__5">Choose {{$attribute->name}}</h2>
                                             </div>
-
                                         @foreach($attribute->values as $attributeValue)
 
                                                 <div class="form-check form-check-inline">
@@ -85,7 +78,6 @@
                                                 </div>
                                         @endforeach
                                     @endforeach
-
                                     </div>
                                     <br>
                                     <input type="hidden" name="id" value="{{$product->id}}">

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class AttributeValue extends Model
 {
     protected  $table = 'attribute_values';
+    protected  $fillable = ['attribute_id', 'value'];
     public $timestamps = false;
 
     public function attribute()
@@ -20,9 +21,10 @@ class AttributeValue extends Model
         foreach ($attributesVariants as $attributeVariant)
         {
             foreach ($attributeVariant->attribute()->get() as $attribute){
-                $productAttribute[] = [
-                    'attributeId'=> $attribute->id,
-                    'attributeName' => $attribute->name,
+                $productAttribute[]
+                    = [
+                    'attributeId'    => $attribute->id,
+                    'attributeName'  => $attribute->name,
                     'attributeValue' => $attributeVariant->value
                 ];
             }

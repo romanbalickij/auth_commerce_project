@@ -14,6 +14,7 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
+
        // factory(Product::class,4)->create();
 //
 //        $now = Carbon::now()->toDateTimeString();
@@ -108,4 +109,4 @@ class ProductTableSeeder extends Seeder
 
 }
 
-factory(Product::class,20)->create();
+//factory(Product::class,20)->create();

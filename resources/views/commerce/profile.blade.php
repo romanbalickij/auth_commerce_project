@@ -6,8 +6,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <form action="#">
+
                         <div class="table-content table-responsive">
+                    @if($orders->isNotEmpty())
                             <table>
                                 <thead>
                                 <tr>
@@ -26,7 +27,17 @@
                                         <td class="product-thumbnail"><a href="{{route('show.product',$product->slug)}}">
                                                 <img src="{{$product->getImage()}}" alt="product img" /></a></td>
                                         <td class="product-name"><a href="{{route('show.product',$product->slug)}}">{{$product->name}}</a></td>
-                                        <td class="product-price"><span class="amount">attributes</span></td>
+                                        <td class="product-price">
+                                            <span class="amount">
+                                                 <ul>
+                                                    <li>
+                                                        @foreach(jsonDecode($product->pivot->properties) as $attribute)
+                                                            <b>{{$attribute->key}}</b>:{{$attribute->value}}
+                                                        @endforeach
+                                                    </li>
+                                                </ul>
+                                            </span>
+                                        </td>
                                         <td class="product-quantity">{{presentPrice($order->subtotal)}}</td>
                                         <td class="product-subtotal">{{$product->pivot->quantity}}</td>
                                         <td class="product-remove">
@@ -44,7 +55,10 @@
                                 </tbody>
                             </table>
                         </div>
-                    </form>
+                    @else
+                        <h1>You  Not have  orders</h1><br>
+                        <h3><a href="{{route('shop.index')}}">Continue shopping</a></h3>
+                    @endif
                 </div>
             </div>
         </div>

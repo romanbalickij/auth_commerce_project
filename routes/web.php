@@ -8,9 +8,10 @@ Route::group(['namespace' => 'Commerce'], function (){
          /**ShopController**/
     Route::get('/shop', 'ShopController@index')->name('shop.index');
     Route::post('/shop', 'ShopController@index')->name('shop.sort');
+    Route::get('/search', 'ShopController@search')->name('search');
     Route::get('/category/{slug}', 'ShopController@category')->name('shop.category');
     Route::get('/tag/{slug}', 'ShopController@tags')->name('shop.tag');
-    Route::post('/search', 'ShopController@search')->name('search');
+
 
          /**CartController**/
     Route::get('/cart', 'CartController@index')->name('cart.index');

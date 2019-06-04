@@ -12,14 +12,15 @@ class HomeController extends Controller
 
      public function index()
      {
-       $products = Product::inRandomOrder()->take(8)->get();
+       $products = Product::inRandomOrder()->take(10)->get();
+        // $products = Product::paginate(10);
        return view('commerce.index', compact('products'));
      }
 
      public function show($slug)
      {
          $product = Product::where('slug', $slug)->firstOrFail();
-         $attributes = Attribute::where('product_id', 1)->get();
+         $attributes = Attribute::where('product_id', $product->id)->get();
          return view('commerce.show', compact('product', 'attributes'));
      }
 

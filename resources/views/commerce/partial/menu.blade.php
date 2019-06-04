@@ -3,13 +3,6 @@
         <ul class="main__menu">
             <li class="drop"><a href="{{route('home.index')}}">Home</a>
             </li>
-            <li class="drop"><a href="blog.html">Blog</a>
-                <ul class="dropdown">
-                    <li><a href="blog.html">blog 3 column</a></li>
-                    <li><a href="blog-2-col-rightsidebar.html">2 col right siderbar</a></li>
-                    <li><a href="blog-details-left-sidebar.html"> blog details</a></li>
-                </ul>
-            </li>
             <li class="drop"><a href="{{route('shop.index')}}">Shop</a>
             </li>
             <li class="drop">

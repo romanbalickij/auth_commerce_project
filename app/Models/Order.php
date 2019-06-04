@@ -22,7 +22,7 @@ class Order extends Model
     }
 
     public function products(){
-        return $this->belongsToMany(Product::class)->withPivot('quantity');
+        return $this->belongsToMany(Product::class)->withPivot('quantity','properties');
     }
 
     public static function createOrders($order)
@@ -43,8 +43,9 @@ class Order extends Model
         return $order;
     }
 
-    public function createOrderProductTable($id, $quantity)
+    public function createOrderProductTable($id, $quantity, $attribute)
     {
-       $this->products()->attach($id, ['quantity'=> $quantity]);
+       $value = json_encode($attribute,true);
+       $this->products()->attach($id, ['quantity'=> $quantity,'properties' => $value]);
     }
 }

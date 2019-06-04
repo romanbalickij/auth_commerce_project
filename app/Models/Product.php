@@ -11,6 +11,11 @@ use Nicolaslopezj\Searchable\SearchableTrait;
 class Product extends Model
 {
 
+    protected $casts = [
+        'properties' => 'array'
+    ];
+
+
     protected $table = 'products';
     public $timestamps = false;
 
@@ -49,13 +54,10 @@ class Product extends Model
         return $this->belongsToMany(Attribute::class,'product_variants');
     }
 
-
     public function orders()
     {
         return $this->belongsToMany(Order::class);
     }
-
-
 
     public function presentPrice()
     {
@@ -72,14 +74,18 @@ class Product extends Model
     public static function sortByProducts($sort)
     {
         if($sort == 'new product'){
-            return self::orderBy('date', 'desc')->paginate(5);
+            return self::orderBy('date', 'desc')->paginate(10);
         } elseif ($sort == 'popular') {
-            return self::orderBy('views', 'desc')->paginate(5);
+            return self::orderBy('views', 'desc')->paginate(10);
         } elseif($sort == 'cheap') {
-            return self::orderBy('price')->paginate(5);
+            return self::orderBy('price')->paginate(10);
         } elseif($sort == 'expensive') {
-            return self::orderBy('price', 'desc')->paginate(5);
+            return self::orderBy('price', 'desc')->paginate(10);
+        } else {
+            abort(404);
         }
+
+
     }
 
     public static function searchProducts($product){
@@ -87,14 +93,20 @@ class Product extends Model
     }
 
     public static function addToCart($product, $productAttribute){
-     // return  Cart::add($product->id, $product->name, 1 , $product->price)->associate('App\Models\Product');
-     return   Cart::add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->price, 'options' => ['attributes' => $productAttribute]])->associate('App\Models\Product');
+     return Cart::add(
+         [
+         'id'      => $product->id,
+         'name'    => $product->name,
+         'qty'     => 1,
+         'price'   => $product->price,
+         'options' => ['attributes' => $productAttribute]
+         ])->associate('App\Models\Product');
     }
 
     public static function duplicateProduct($product)
     {
-       return  Cart::search(function ($cartItem, $rowId) use($product) {
-            return $cartItem->id ===  $product->id;
+       return Cart::search(function ($cartItem, $rowId) use($product) {
+            return $cartItem->id === $product->id;
         });
     }
 
@@ -113,11 +125,11 @@ class Product extends Model
         })->values()->toJson();;
 
         $charge = Stripe::charges()->create([
-            'amount' => Coupon::getCouponDiscount(),
-            'currency' => 'USD',
-            'source'   => $token,
+            'amount'     => Coupon::getCouponDiscount(),
+            'currency'   => 'USD',
+            'source'     => $token,
             'description'   => 'Order',
-            'receipt_email'   => $email,
+            'receipt_email' => $email,
             'metadata'   => [
                 'contents' => $contents,
                 'quantity' => Cart::content()->count(),
@@ -127,13 +139,13 @@ class Product extends Model
 
     public static function  decreaseQuantities()
     {
-        $product = Product::findOrFail(self::getproductInCart()->id);
-        $product->update(['quantity' => $product->quantity - self::getproductInCart()->qty]);
+        $product = Product::findOrFail(self::getProductInCart()->id);
+        $product->update(['quantity' => $product->quantity - self::getProductInCart()->qty]);
     }
 
     public static function  productsAreNoLongerAvailable(){
-        $product = Product::findOrFail(self::getproductInCart()->id);
-        $productInCart = self::getproductInCart()->qty;
+        $product = Product::findOrFail(self::getProductInCart()->id);
+        $productInCart = self::getProductInCart()->qty;
         if($product->quantity < $productInCart) {
            return true;
         }
@@ -146,6 +158,29 @@ class Product extends Model
             return 'In Stocks';
         }
             return 'End Stocks';
+    }
+
+    public static function orderProductOptions()
+    {
+        foreach (Product::getProductInCart()->options->attributes as $attribute){
+            $data[] =
+                [
+                    'key'  =>$attribute['attributeName'],
+                    'value'=>$attribute['attributeValue']
+                ];
+        }
+        return $data;
+    }
+
+    public function setPropertiesAttribute($value)
+    {
+        $properties = [];
+        foreach ($value as $array_item) {
+            if (!is_null($array_item['key'])) {
+                $properties[] = $array_item;
+            }
+        }
+        $this->attributes['properties'] = json_encode($properties);
     }
 
 }

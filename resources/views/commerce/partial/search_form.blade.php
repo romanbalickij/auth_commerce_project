@@ -3,8 +3,9 @@
         <div class="row" >
             <div class="col-md-12" >
                 <div class="search__inner">
-                    <form action="{{route('search')}}" method="post">
+                    <form action="{{route('search')}}" method="get">
                         @csrf
+                        @method('HEAD')
                         <input placeholder="Search here... " type="text" name="search">
                         <button type="submit"></button>
                     </form>
