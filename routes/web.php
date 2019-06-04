@@ -44,3 +44,7 @@ Route::group(['namespace' => 'Commerce'], function (){
     Route::get('login/github', 'SocialiteController@redirectToProvider');
     Route::get('login/github/callback', 'SocialiteController@handleProviderCallback');
 });
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

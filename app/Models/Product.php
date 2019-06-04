@@ -67,7 +67,8 @@ class Product extends Model
     public  function getImage()
     {
         if($this->image != null) {
-            return '/commerce/image/'.$this->image;
+            return '/storage/'.$this->image;
+          //  return '/commerce/image/'.$this->image;
         }
     }
 
@@ -84,8 +85,6 @@ class Product extends Model
         } else {
             abort(404);
         }
-
-
     }
 
     public static function searchProducts($product){
