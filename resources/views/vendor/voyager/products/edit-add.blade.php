@@ -89,10 +89,16 @@
                                     @endif
                                 </div>
                             @endforeach
-                        <label>Tags</label>
+                        <div class="form-group">
+                              <label>Tags</label>
                             <ul id="categorychecklist" data-wp-lists="list:category" class="categorychecklist form-no-clear">
-                            <li id="category-209"><label class="selectit"><input value="209" type="checkbox" name="tags[]" id="in-category-209">CSS</label></li>
+                                @foreach($tags as $tag)
+                                  <li id="category-209"><label class="selectit">
+                                          <input value="{{$tag->id}}" {{ $product->hasTag($tag->id) ? 'checked' : ''}}
+                                                 type="checkbox" name="tags[]">{{$tag->title}}</label></li>
+                                @endforeach
                             </ul>
+                        </div>
                         </div><!-- panel-body -->
 
                         <div class="panel-footer">

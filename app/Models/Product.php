@@ -182,4 +182,16 @@ class Product extends Model
         $this->attributes['properties'] = json_encode($properties);
     }
 
+    public  function addTagsId($tagId)
+    {
+        $this->tags()->sync($tagId);
+    }
+
+    public function hasTag($tagId)
+    {
+        $tags = $this->tags()->pluck('tags.id');
+        return $tags->contains($tagId);
+    }
+
+
 }
