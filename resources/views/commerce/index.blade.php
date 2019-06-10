@@ -91,7 +91,7 @@
                                 <div class="product__inner">
                                     <div class="pro__thumb">
                                         <a href="#">
-                                            <img src="{{$product->getImage()}}" alt="product images">
+                                            <img src="{{$product->getImage()}}" style="height: 370px;width: 510px" alt="product images">
                                         </a>
                                     </div>
                                     <div class="product__hover__info">

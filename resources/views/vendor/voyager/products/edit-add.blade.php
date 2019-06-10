@@ -88,14 +88,19 @@
                                         @endforeach
                                     @endif
                                 </div>
+
                             @endforeach
+
+
+
                         <div class="form-group">
                               <label>Tags</label>
                             <ul id="categorychecklist" data-wp-lists="list:category" class="categorychecklist form-no-clear">
                                 @foreach($tags as $tag)
                                   <li id="category-209"><label class="selectit">
                                           <input value="{{$tag->id}}" {{ $product->hasTag($tag->id) ? 'checked' : ''}}
-                                                 type="checkbox" name="tags[]">{{$tag->title}}</label></li>
+                                                 type="checkbox" name="tags[]">{{$tag->title}}</label>
+                                  </li>
                                 @endforeach
                             </ul>
                         </div>

@@ -41,7 +41,7 @@
                                         <div class="product__inner">
                                             <div class="pro__thumb">
                                                 <a href="#">
-                                                    <img src="{{$product->getImage()}}" alt="product images">
+                                                    <img src="{{$product->getImage()}}" style="height: 360px;width: 510px" alt="product images">
                                                 </a>
                                             </div>
                                             @include('commerce.partial.add_cart')

@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Voyager;
 
+use App\Models\Attribute;
+use App\Models\AttributeValue;
 use App\Models\CategoryProduct;
 use App\Models\Product;
 use App\Models\ProductTag;
+use App\Models\ProductVariant;
 use App\Models\Tag;
+use App\Models\Variant;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -224,6 +228,8 @@ class ProductController extends VoyagerBaseController
     public function edit(Request $request, $id)
     {
 
+
+
         $slug = $this->getSlug($request);
 
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
@@ -265,6 +271,11 @@ class ProductController extends VoyagerBaseController
         $product = Product::findOrFail($id);
         $tags = Tag::all();
 
+
+
+
+
+
         return Voyager::view($view, compact('dataType',
             'dataTypeContent', 'isModelTranslatable','tags','product'));
     }
@@ -272,6 +283,7 @@ class ProductController extends VoyagerBaseController
     // POST BR(E)AD
     public function update(Request $request, $id)
     {
+
 
 
         $slug = $this->getSlug($request);
@@ -302,6 +314,7 @@ class ProductController extends VoyagerBaseController
 
        $product = Product::findOrFail($id);
        $product->addTagsId($request->tags);
+
 
         return redirect()
             ->route("voyager.{$dataType->slug}.index")

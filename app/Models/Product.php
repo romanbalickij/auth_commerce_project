@@ -51,7 +51,7 @@ class Product extends Model
 
     public function attributes()
     {
-        return $this->belongsToMany(Attribute::class,'product_variants');
+        return $this->belongsToMany(Attribute::class,'product_attributes','product_id','attribute_id')->withPivot('name');
     }
 
     public function orders()
@@ -94,11 +94,11 @@ class Product extends Model
     public static function addToCart($product, $productAttribute){
      return Cart::add(
          [
-         'id'      => $product->id,
-         'name'    => $product->name,
-         'qty'     => 1,
-         'price'   => $product->price,
-         'options' => ['attributes' => $productAttribute]
+             'id'      => $product->id,
+             'name'    => $product->name,
+             'qty'     => 1,
+             'price'   => $product->price,
+             'options' => ['attributes' => $productAttribute]
          ])->associate('App\Models\Product');
     }
 
@@ -192,6 +192,7 @@ class Product extends Model
         $tags = $this->tags()->pluck('tags.id');
         return $tags->contains($tagId);
     }
+
 
 
 }

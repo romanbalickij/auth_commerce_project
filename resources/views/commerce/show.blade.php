@@ -55,7 +55,7 @@
                             </div>
                             <div class="pro__details">
                                 <p>
-                                    {{$product->description}}
+                                    {!! $product->description !!}
                                 </p>
                             </div>
                             <ul class="pro__dtl__prize">

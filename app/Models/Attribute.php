@@ -12,12 +12,14 @@ class Attribute extends Model
     public $timestamps = false;
 
     public function products(){
-        return $this->belongsToMany(Product::class,'product_variants');
+        return $this->belongsToMany(Product::class,'product_attributes',
+            'attribute_id', 'product_id')->withPivot('name');
     }
 
     public function values()
     {
         return $this->hasMany(AttributeValue::class);
     }
+
 
 }
