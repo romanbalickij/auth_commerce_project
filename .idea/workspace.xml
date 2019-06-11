@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ae1c4512-acb1-4399-825b-019e6019f97a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Voyager/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Voyager/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Attribute.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Attribute.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/commerce/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/commerce/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/commerce/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/commerce/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/commerce/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/commerce/shop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/commerce/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/commerce/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/voyager/products/edit-add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/voyager/products/edit-add.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +35,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
+            <state relative-caret-position="2850">
               <caret line="193" column="5" selection-start-line="193" selection-start-column="5" selection-end-line="193" selection-end-column="5" />
               <folding>
                 <element signature="e#30#74#0#PHP" expanded="true" />
@@ -55,7 +47,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Voyager/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
+            <state relative-caret-position="3825">
               <caret line="274" selection-start-line="274" selection-end-line="274" />
               <folding>
                 <element signature="e#48#73#0#PHP" expanded="true" />
@@ -67,8 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/vendor/voyager/products/edit-add.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="93" column="19" lean-forward="true" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
+            <state relative-caret-position="95">
+              <caret line="97" column="34" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -76,12 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/tcg/voyager/resources/views/bread/edit-add.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-              <folding>
-                <element signature="e#628#6168#0#HTML" />
-                <element signature="e#6174#7212#0#HTML" />
-              </folding>
+            <state relative-caret-position="1740">
+              <caret line="116" column="66" selection-start-line="116" selection-start-column="66" selection-end-line="116" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -278,8 +266,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="172" />
-    <option name="y" value="104" />
+    <option name="x" value="173" />
+    <option name="y" value="101" />
     <option name="width" value="1161" />
     <option name="height" value="606" />
   </component>
@@ -289,7 +277,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -312,6 +299,12 @@
               <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="seeds" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
@@ -404,6 +397,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -511,18 +505,18 @@
       <workItem from="1559926854213" duration="4366000" />
       <workItem from="1560007591547" duration="6799000" />
       <workItem from="1560092217674" duration="1221000" />
-      <workItem from="1560194309616" duration="1867000" />
+      <workItem from="1560194309616" duration="2684000" />
+      <workItem from="1560198687250" duration="709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="403802000" />
+    <option name="totallyTimeSpent" value="405328000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="172" y="104" width="1161" height="606" extended-state="0" />
-    <editor active="true" />
+    <frame x="173" y="101" width="1161" height="606" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49763033" visible="true" weight="0.23408072" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49763033" visible="true" weight="0.23856503" />
       <window_info id="Structure" order="1" sideWeight="0.50236964" side_tool="true" weight="0.26336792" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -536,7 +530,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49865472" weight="0.077568136" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49865472" visible="true" weight="0.0754717" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5013453" side_tool="true" weight="0.43091336" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -890,16 +884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="193" column="5" selection-start-line="193" selection-start-column="5" selection-end-line="193" selection-end-column="5" />
-          <folding>
-            <element signature="e#30#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/commerce/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -930,16 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Voyager/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="274" selection-start-line="274" selection-end-line="274" />
-          <folding>
-            <element signature="e#48#73#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/commerce/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -954,21 +928,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2850">
+          <caret line="193" column="5" selection-start-line="193" selection-start-column="5" selection-end-line="193" selection-end-column="5" />
+          <folding>
+            <element signature="e#30#74#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Voyager/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3825">
+          <caret line="274" selection-start-line="274" selection-end-line="274" />
+          <folding>
+            <element signature="e#48#73#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/tcg/voyager/resources/views/bread/edit-add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-          <folding>
-            <element signature="e#628#6168#0#HTML" />
-            <element signature="e#6174#7212#0#HTML" />
-          </folding>
+        <state relative-caret-position="1740">
+          <caret line="116" column="66" selection-start-line="116" selection-start-column="66" selection-end-line="116" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/vendor/voyager/products/edit-add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="93" column="19" lean-forward="true" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
+        <state relative-caret-position="95">
+          <caret line="97" column="34" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
         </state>
       </provider>
     </entry>
