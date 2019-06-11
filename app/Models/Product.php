@@ -59,6 +59,12 @@ class Product extends Model
         return $this->belongsToMany(Order::class);
     }
 
+    public function values()
+    {
+        return $this->belongsToMany(AttributeValue::class,'product_variant','product_id','attribute_value_id');
+    }
+
+
     public function presentPrice()
     {
         return money_format('$%i', $this->price);

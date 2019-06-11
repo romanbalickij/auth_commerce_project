@@ -67,16 +67,18 @@
                                     @csrf
                                     <div class="col-md-111 mb-105">
                                     @foreach($attributes as  $attribute)
-                                            <div class="pro__dtl__color">
-                                                <h2 class="title__5">Choose {{$attribute->name}}</h2>
-                                            </div>
-                                        @foreach($attribute->values as $attributeValue)
-
-                                                <div class="form-check form-check-inline">
-                                                    <input type="checkbox" name="attribute[]" value="{{$attributeValue->id}}"  class="form-check-input" id="materialInline1">
-                                                    <label class="form-check-label" for="materialInline1">{{$attributeValue->value}}</label>
-                                                </div>
-                                        @endforeach
+                                        <div class="pro__dtl__color">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlSelect1"> Choose {{$attribute->name}}</label>
+                                            <select class="form-control" name="attributeValue[]" id="exampleFormControlSelect1">
+                                                @foreach($productOptions as $productOption)
+                                                @if($attribute->id == $productOption->attribute_id)
+                                                    <option value="{{$productOption->id}}">{{$productOption->value}}</option>
+                                                @endif
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     @endforeach
                                     </div>
                                     <br>

@@ -13,16 +13,16 @@ class CreateProductTagsTable extends Migration
      */
     public function up()
     {
-//        Schema::create('product_tags', function (Blueprint $table) {
-//            $table->bigIncrements('id');
-//            $table->integer('product_id')->unsigned()->nullable();
-//            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-//
-//            $table->integer('tag_id')->unsigned()->nullable();
-//            $table->foreign('tag_is')->references('id')->on('tags')->onDelete('cascade');
-//
-//            $table->timestamps();
-//        });
+        Schema::create('product_tags', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('product_id')->unsigned()->nullable();
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+
+            $table->integer('tag_id')->unsigned()->nullable();
+            $table->foreign('tag_is')->references('id')->on('tags')->onDelete('cascade');
+
+            $table->timestamps();
+        });
     }
 
     /**
