@@ -90,9 +90,6 @@
                                 </div>
 
                             @endforeach
-
-
-
                         <div class="form-group">
                               <label>Tags</label>
                             <ul id="categorychecklist" data-wp-lists="list:category" class="categorychecklist form-no-clear">
