@@ -70,16 +70,22 @@
                                             <div class="pro__dtl__color">
 
                                             </div>
-                                        @foreach($productOptions as $productOption)
 
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlSelect1"> Choose {{$attribute->name}}</label>
-                                                    <select class="form-control" id="exampleFormControlSelect1">
+
+
+
+                                            <div class="form-group">
+                                                <label for="exampleFormControlSelect1"> Choose {{$attribute->name}}</label>
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                    @foreach($productOptions as $productOption)
+
+                                                    @if($attribute->id == $productOption->attribute_id)
                                                         <option value="{{$productOption->id}}">{{$productOption->value}}</option>
-                                                    </select>
-                                                </div>
+                                                    @endif
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                         @endforeach
-                                    @endforeach
                                     </div>
                                     <br>
                                     <input type="hidden" name="id" value="{{$product->id}}">

@@ -24,6 +24,7 @@ class HomeController extends Controller
          $attributes = $product->attributes()->get();
          $productOptions = $product->values()->get();
 
+
          return view('commerce.show', compact('product', 'attributes', 'productOptions'));
      }
 
