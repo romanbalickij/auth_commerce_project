@@ -68,15 +68,10 @@
                                     <div class="col-md-111 mb-105">
                                     @foreach($attributes as  $attribute)
                                             <div class="pro__dtl__color">
-
                                             </div>
-
-
-
-
                                             <div class="form-group">
                                                 <label for="exampleFormControlSelect1"> Choose {{$attribute->name}}</label>
-                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                <select class="form-control" name="attributeValue[]" id="exampleFormControlSelect1">
                                                     @foreach($productOptions as $productOption)
 
                                                     @if($attribute->id == $productOption->attribute_id)

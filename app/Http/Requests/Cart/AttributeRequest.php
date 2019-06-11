@@ -24,7 +24,7 @@ class AttributeRequest extends FormRequest
     public function rules()
     {
         return [
-            'attribute' => 'required',
+            'attributeValue' => 'required',
         ];
     }
 
