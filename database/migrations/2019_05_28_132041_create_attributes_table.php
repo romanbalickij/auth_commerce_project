@@ -11,21 +11,14 @@ class CreateAttributesTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+//    public function up()
+//    {
 //        Schema::create('attributes', function (Blueprint $table) {
 //            $table->increments('id');
-//            $table->engine = 'InnoDB';
-//            $table->unsignedInteger('product_id')->nullable();
 //            $table->string('name');
 //            $table->timestamps();
-//
-//
-//                $table->foreign('product_id')->references('id')->on('products')
-//                ->onUpdate('cascade')->onDelete('cascade');
-//
 //        });
-    }
+//    }
 
     /**
      * Reverse the migrations.
