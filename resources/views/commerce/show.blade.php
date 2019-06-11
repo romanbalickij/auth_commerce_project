@@ -68,13 +68,15 @@
                                     <div class="col-md-111 mb-105">
                                     @foreach($attributes as  $attribute)
                                             <div class="pro__dtl__color">
-                                                <h2 class="title__5">Choose {{$attribute->name}}</h2>
-                                            </div>
-                                        @foreach($attribute->values as $attributeValue)
 
-                                                <div class="form-check form-check-inline">
-                                                    <input type="checkbox" name="attribute[]" value="{{$attributeValue->id}}"  class="form-check-input" id="materialInline1">
-                                                    <label class="form-check-label" for="materialInline1">{{$attributeValue->value}}</label>
+                                            </div>
+                                        @foreach($productOptions as $productOption)
+
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect1"> Choose {{$attribute->name}}</label>
+                                                    <select class="form-control" id="exampleFormControlSelect1">
+                                                        <option value="{{$productOption->id}}">{{$productOption->value}}</option>
+                                                    </select>
                                                 </div>
                                         @endforeach
                                     @endforeach

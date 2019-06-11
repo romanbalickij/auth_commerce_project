@@ -19,9 +19,12 @@ class HomeController extends Controller
 
      public function show($slug)
      {
-         $product = Product::where('slug', $slug)->firstOrFail();
-         $attributes = Attribute::where('product_id', $product->id)->get();
-         return view('commerce.show', compact('product', 'attributes'));
+         $product = Product::where('id', 1)->firstOrFail();
+
+         $attributes = $product->attributes()->get();
+         $productOptions = $product->values()->get();
+
+         return view('commerce.show', compact('product', 'attributes', 'productOptions'));
      }
 
 }

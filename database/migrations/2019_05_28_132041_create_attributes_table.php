@@ -11,14 +11,14 @@ class CreateAttributesTable extends Migration
      *
      * @return void
      */
-//    public function up()
-//    {
-//        Schema::create('attributes', function (Blueprint $table) {
-//            $table->increments('id');
-//            $table->string('name');
-//            $table->timestamps();
-//        });
-//    }
+    public function up()
+    {
+        Schema::create('attributes', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.
