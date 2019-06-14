@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="/commerce/css/custom.css">
     <link rel="stylesheet" href="/commerce/css/checkout.css">
     <link rel="stylesheet" href="/commerce/css/stripe.css">
+    <link rel="stylesheet" href="/commerce/css/sort-price.css">
 
     <!-- Modernizr JS -->
     <script src="/commerce/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -217,6 +218,10 @@
 <script src="/commerce/js/main.js"></script>
 <!-- js file for stripe cart include-->
 <script src="https://js.stripe.com/v3/"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/commerce/js/sort-price.js" type="text/javascript"></script>
 
 @yield('js')
 

@@ -50,6 +50,23 @@
                                                     <option value="cheap">from cheap to expensive</option>
                                                     <option value="expensive">from expensive to cheap</option>
                                                 </select>
+                                                    <div id="slider-range"></div>
+                                                            <div class="price--output">
+                                                                <span>Min $<input type="text" name="min"  min=0 id="min_price" ></span>
+                                                                <span>Max $<input type="text" name="max"  min=0 id="max_price" ></span>
+                                                                <br>
+                                                                <br>
+                                                            </div>
+
+{{--                                                <div id="slider-range"  name="rangeInput" >--}}
+{{--                                                    <div class="d-flex mt-5 justify-content-between">--}}
+{{--                                                        <div>--}}
+{{--                                                            <input type="number" name="min" min=0 id="min_price" class="input-width" >--}}
+{{--                                                            <input type="number" name="max" min=0 id="max_price" class="input-width" >--}}
+{{--                                                        </div>--}}
+{{--                                                        <button type="submite" class=" btn-primary" >Sort</button>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
                                                 <button type="submit" class="btn btn-light" >sort</button>
                                              </div>
                                             </form>

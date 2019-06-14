@@ -78,20 +78,29 @@ class Product extends Model
         }
     }
 
-    public static function sortByProducts($sort)
+    public static function sortByProducts($sort, $min, $max)
     {
+
+
+
         if($sort == 'new product'){
-            return self::orderBy('date', 'desc')->paginate(10);
+            return self::sortPriceMinMax($min, $max)->orderBy('date', 'desc')->paginate(10);
         } elseif ($sort == 'popular') {
-            return self::orderBy('views', 'desc')->paginate(10);
+            return self::sortPriceMinMax($min, $max)->orderBy('views', 'desc')->paginate(10);
         } elseif($sort == 'cheap') {
             return self::orderBy('price')->paginate(10);
         } elseif($sort == 'expensive') {
             return self::orderBy('price', 'desc')->paginate(10);
-        } else {
-            abort(404);
         }
+
     }
+
+
+    public static function sortPriceMinMax($min, $max){
+        return self::whereBetween('price', [$min, $max]);
+    }
+
+
 
     public static function searchProducts($product){
        return self::search($product->search)->paginate(5);

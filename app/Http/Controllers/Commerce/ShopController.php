@@ -5,18 +5,27 @@ namespace App\Http\Controllers\Commerce;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Tag;
+use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class ShopController extends Controller
 {
 
     public function index(Request $request){
+
+
      if($request->get('sort') == null) {
         $products = Product::orderBy('created_at', 'desc')->paginate(10);
      } else {
-        $products = Product::sortByProducts($request->get('sort'));
+        $products = Product::sortByProducts(
+            $request->get('sort'),
+            $request->input('min'),
+            $request->input('max'));
+
      }
+
         $categories = Category::all();
         $tags = Tag::all();
         return view('commerce.shop', compact('products', 'categories', 'tags'));
