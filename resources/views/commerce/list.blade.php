@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="product__list another-product-style">
                         <!-- Start Single Product -->
-                        @if($products->isNotEmpty())
+                          @if($products->isNotEmpty())
                           @foreach($products  as $product)
                                 <div class="col-md-3 single__pro col-lg-3 cat--1 col-sm-4 col-xs-12">
                                     <div class="product foo">
@@ -57,9 +57,9 @@
                                     </div>
                                 </div>
                           @endforeach
-                        @else
-                            <h2>products are not in this category</h2>
-                        @endif
+                          @else
+                             <h2>products are not in this category</h2>
+                          @endif
                         <!-- End Single Product -->
                         <!-- End Single Product -->
                     </div>

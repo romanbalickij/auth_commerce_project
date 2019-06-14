@@ -84,13 +84,13 @@ class Product extends Model
 
 
         if($sort == 'new product'){
-            return self::sortPriceMinMax($min, $max)->orderBy('date', 'desc')->paginate(10);
+            return self::sortPriceMinMax($min, $max)->orderBy('date', 'desc')->paginate(5);
         } elseif ($sort == 'popular') {
-            return self::sortPriceMinMax($min, $max)->orderBy('views', 'desc')->paginate(10);
+            return self::sortPriceMinMax($min, $max)->orderBy('views', 'desc')->paginate(5);
         } elseif($sort == 'cheap') {
-            return self::orderBy('price')->paginate(10);
+            return self::orderBy('price')->paginate(5);
         } elseif($sort == 'expensive') {
-            return self::orderBy('price', 'desc')->paginate(10);
+            return self::orderBy('price', 'desc')->paginate(5);
         }
 
     }

@@ -17,7 +17,7 @@ class ShopController extends Controller
 
 
      if($request->get('sort') == null) {
-        $products = Product::orderBy('created_at', 'desc')->paginate(10);
+        $products = Product::orderBy('created_at', 'desc')->paginate(5);
      } else {
         $products = Product::sortByProducts(
             $request->get('sort'),
@@ -34,14 +34,14 @@ class ShopController extends Controller
     public function category($slug)
     {
        $category = Category::where('slug', $slug)->firstOrFail();;
-       $products = $category->products()->paginate(10);
+       $products = $category->products()->paginate(5);
        return view( 'commerce.list', compact('products'));
     }
 
     public function tags($slug)
     {
       $tags = Tag::where('slug', $slug)->firstOrFail();
-      $products = $tags->products()->paginate(10);
+      $products = $tags->products()->paginate(5);
       return view( 'commerce.list', compact('products'));
     }
 
