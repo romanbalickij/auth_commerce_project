@@ -42,16 +42,18 @@
                             <div class="pro__detl__title">
                                 <h2>{{$product->name}}</h2>
                             </div>
+                            <form action="{{route('postStar', $product->id)}}" id="addStar" method="POST">
+                                @csrf
+                                <input id="input-1" name="rate" class="rating rating-loading" data-min="0" data-max="5" data-step="1" value="{{ $product->averageRating }}" data-size="xs">
+                                <input type="hidden" name="id" required="" value="{{ $product->id }}">
+                                <span class="review-no">{{$product->ratingPercent ( 10 )}} reviews</span>
+                                <br/>
+                                <button  type="submit" class="btn btn-success">Review</button>
+                            </form>
                             <div class="pro__dtl__rating">
-                                <ul class="pro__rating">
-                                </ul>
-                                <span class="rat__qun">
-                                <div class="pro__dtl__rating">
-                                    <div>
-                                        <div class="badge badge-success">{{$product->getStock()}}</div>
-                                    </div>
+                                <div>
+                                    <div class="badge badge-success">{{$product->getStock()}}</div>
                                 </div>
-                                </span>
                             </div>
                             <div class="pro__details">
                                 <p>

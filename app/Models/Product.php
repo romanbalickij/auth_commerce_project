@@ -6,10 +6,14 @@ use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Database\Eloquent\Model;
 use Nicolaslopezj\Searchable\SearchableTrait;
+use willvincent\Rateable\Rateable;
 
 
 class Product extends Model
 {
+
+    use SearchableTrait;
+    use Rateable;
 
     protected $casts = [
         'properties' => 'array'
@@ -19,7 +23,7 @@ class Product extends Model
     protected $table = 'products';
     public $timestamps = false;
 
-    use SearchableTrait;
+
 
     protected $fillable = [
         'name', 'slug', 'details', 'price', 'description', 'updated_at', 'created_at','quantity'
@@ -80,9 +84,6 @@ class Product extends Model
 
     public static function sortByProducts($sort, $min, $max)
     {
-
-
-
         if($sort == 'new product'){
             return self::sortPriceMinMax($min, $max)->orderBy('date', 'desc')->paginate(5);
         } elseif ($sort == 'popular') {
@@ -92,7 +93,6 @@ class Product extends Model
         } elseif($sort == 'expensive') {
             return self::orderBy('price', 'desc')->paginate(5);
         }
-
     }
 
 

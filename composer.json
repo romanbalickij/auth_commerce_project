@@ -18,7 +18,8 @@
         "laravel/socialite": "^4.1",
         "laravel/tinker": "^1.0",
         "nicolaslopezj/searchable": "^1.10",
-        "tcg/voyager": "^1.2"
+        "tcg/voyager": "^1.2",
+        "willvincent/laravel-rateable": "^1.07"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

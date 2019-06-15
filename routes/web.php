@@ -45,6 +45,7 @@ Route::group(['namespace' => 'Commerce'], function (){
     Route::get('login/github/callback', 'SocialiteController@handleProviderCallback');
 
     Route::get('lang/{locale}', 'LocalizationController@index');
+    Route::post('/rating/{post}', 'HomeController@postStar')->name('postStar');
 });
 
 Route::group(['prefix' => 'admin'], function () {
