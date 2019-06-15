@@ -32,7 +32,7 @@
                         <div class="product__details__container product-details-5">
                             <div class="scroll-single-product mb--30">
 
-                                <img src="{{$product->getImage()}}" style="height: 800px; width: 650px" alt="full-image">
+                                <img src="{{$product->getImage()}}" style="height: 670px; width: 650px" alt="full-image">
                             </div>
 
                         </div>

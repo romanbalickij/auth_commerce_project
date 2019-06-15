@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae1c4512-acb1-4399-825b-019e6019f97a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/auth.loc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/auth.loc.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Commerce/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Commerce/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_28_140113_create_product_variants_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/commerce/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/commerce/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/commerce/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/commerce/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="ae1c4512-acb1-4399-825b-019e6019f97a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +33,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Commerce/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+            <state relative-caret-position="442">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
         </entry>
@@ -54,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/commerce/layout.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="234" lean-forward="true" selection-start-line="234" selection-end-line="234" />
+            <state relative-caret-position="204">
+              <caret line="238" selection-start-line="238" selection-end-line="238" />
             </state>
           </provider>
         </entry>
@@ -64,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/commerce/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="570">
-              <caret line="59" column="65" lean-forward="true" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
+              <caret line="59" column="65" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -73,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="243">
-              <caret line="47" column="79" selection-start-line="47" selection-start-column="79" selection-end-line="47" selection-end-column="79" />
+              <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -271,11 +259,11 @@
       <path value="$PROJECT_DIR$/vendor/willvincent/laravel-rateable" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-64" />
-    <option name="y" value="164" />
-    <option name="width" value="1071" />
-    <option name="height" value="663" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="67" />
+    <option name="y" value="292" />
+    <option name="width" value="1161" />
+    <option name="height" value="594" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -461,10 +449,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="438294000" />
+    <option name="totallyTimeSpent" value="438298000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49763033" visible="true" weight="0.26735833" />
       <window_info id="Structure" order="1" sideWeight="0.50236964" side_tool="true" weight="0.26336792" />
@@ -480,7 +469,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49865472" visible="true" weight="0.4820847" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49865472" visible="true" weight="0.048859935" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5013453" side_tool="true" weight="0.43091336" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -822,13 +811,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_28_140113_create_product_variants_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_28_140113_create_product_variants_table.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_28_135252_create_attribute_values_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -879,29 +862,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/commerce/layout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="234" lean-forward="true" selection-start-line="234" selection-end-line="234" />
+        <state relative-caret-position="204">
+          <caret line="238" selection-start-line="238" selection-end-line="238" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
-          <caret line="47" column="79" selection-start-line="47" selection-start-column="79" selection-end-line="47" selection-end-column="79" />
+          <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/commerce/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
-          <caret line="59" column="65" lean-forward="true" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
+          <caret line="59" column="65" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Commerce/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+        <state relative-caret-position="442">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
