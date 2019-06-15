@@ -44,9 +44,9 @@
                     <div class="row">
                         <div class="col-md-10 col-lg-8 col-md-offset-2 col-lg-offset-4 col-sm-12 col-xs-12">
                             <div class="slider__inner">
-                                <h1> New Product <span class="text--theme">Collection</span></h1>
+                                <h1><span class="text--theme">@lang('app.title')</span></h1>
                                 <div class="slider__btn">
-                                    <a class="htc__btn" href="{{route('shop.index')}}">shop now</a>
+                                    <a class="htc__btn" href="{{route('shop.index')}}">@lang('app.shop_title')</a>
                                 </div>
                             </div>
                         </div>
@@ -60,9 +60,9 @@
                     <div class="row">
                         <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
                             <div class="slider__inner">
-                                <h1>  New Product <span class="text--theme">Collection</span></h1>
+                                <h1>@lang('app.title')</h1>
                                 <div class="slider__btn">
-                                    <a class="htc__btn" href="{{route('shop.index')}}">shop now</a>
+                                    <a class="htc__btn" href="{{route('shop.index')}}">@lang('app.shop_title')</a>
                                 </div>
                             </div>
                         </div>

@@ -43,6 +43,8 @@ Route::group(['namespace' => 'Commerce'], function (){
      /**SocialiteController*/
     Route::get('login/github', 'SocialiteController@redirectToProvider');
     Route::get('login/github/callback', 'SocialiteController@handleProviderCallback');
+
+    Route::get('lang/{locale}', 'LocalizationController@index');
 });
 
 Route::group(['prefix' => 'admin'], function () {

@@ -1,20 +1,32 @@
 <div class="col-md-8 col-lg-8 col-sm-6 col-xs-6">
     <nav class="mainmenu__nav hidden-xs hidden-sm">
         <ul class="main__menu">
-            <li class="drop"><a href="{{route('home.index')}}">Home</a>
+            <li class="drop"><a href="{{route('home.index')}}">@lang('app.home')</a>
             </li>
-            <li class="drop"><a href="{{route('shop.index')}}">Shop</a>
+            <li class="drop"><a href="{{route('shop.index')}}">@lang('app.shop')</a>
             </li>
+
             <li class="drop">
             @if(Auth::check())
-                <li><a href="{{route('logout')}}">Logout</a></li>
+                <li><a href="{{route('logout')}}">@lang('app.logout')</a></li>
             @else
-                <li><a href="{{route('register.form')}}">Register</a></li>
+                <li><a href="{{route('register.form')}}">@lang('app.register')</a></li>
 
-                <li><a href="{{route('login.form')}}">Login</a></li>
+                <li><a href="{{route('login.form')}}">@lang('app.login')</a></li>
             @endif
                 </li>
+                <li class="drop"><a href="blog.html">@lang('app.language')</a>
+                    <ul class="dropdown">
+                        <li><a class="dropdown-item" href="lang/en">English</a></li>
+                        <li><a class="dropdown-item" href="lang/fr">French</a></li>
+                        <li><a class="dropdown-item" href="lang/ge">German</a></li>
+                        <li><a class="dropdown-item" href="lang/es">Spanish</a></li>
+                        <li><a class="dropdown-item" href="lang/in">Hindi</a></li>
+                        <li><a class="dropdown-item" href="lang/uk">Uk</a></li>
+                    </ul>
+                </li>
         </ul>
+
     </nav>
 </div>
 <div class="col-md-2 col-sm-4 col-xs-3">
@@ -31,6 +43,7 @@
                      @endif
                 </span>
             </li>
+
         </a>
     </ul>
 </div>
