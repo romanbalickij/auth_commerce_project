@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.1.3",
+        "ext-json": "*",
         "cartalyst/stripe-laravel": "^10.0",
         "fideloper/proxy": "^4.0",
         "hardevine/shoppingcart": "2.6.2.1",
@@ -17,7 +18,7 @@
         "laravel/socialite": "^4.1",
         "laravel/tinker": "^1.0",
         "nicolaslopezj/searchable": "^1.10",
-        "ext-json": "*"
+        "tcg/voyager": "^1.2"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
