@@ -22,7 +22,9 @@ class HomeController extends Controller
          $product = Product::where('slug', $slug)->firstOrFail();
          $attributes = $product->attributes()->get();
          $productOptions = $product->values()->get();
-         return view('commerce.show', compact('product', 'attributes', 'productOptions'));
+         $comments = $product->comments()->get();
+
+         return view('commerce.show', compact('product', 'attributes', 'productOptions','comments'));
      }
 
     public function postStar (Request $request) {

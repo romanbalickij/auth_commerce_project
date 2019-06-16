@@ -12,7 +12,6 @@ Route::group(['namespace' => 'Commerce'], function (){
     Route::get('/category/{slug}', 'ShopController@category')->name('shop.category');
     Route::get('/tag/{slug}', 'ShopController@tags')->name('shop.tag');
 
-
          /**CartController**/
     Route::get('/cart', 'CartController@index')->name('cart.index');
     Route::post('/cart', 'CartController@store')->name('cart.store');
@@ -44,8 +43,14 @@ Route::group(['namespace' => 'Commerce'], function (){
     Route::get('login/github', 'SocialiteController@redirectToProvider');
     Route::get('login/github/callback', 'SocialiteController@handleProviderCallback');
 
+    /**LandController*/
     Route::get('lang/{locale}', 'LocalizationController@index');
+
+    /**RatingController*/
     Route::post('/rating/{post}', 'HomeController@postStar')->name('postStar');
+
+    /**CommentController*/
+    Route::post('/comment/store', 'CommentController@store')->name('comment.store');
 });
 
 Route::group(['prefix' => 'admin'], function () {

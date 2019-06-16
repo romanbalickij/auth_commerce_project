@@ -19,11 +19,8 @@ class Product extends Model
         'properties' => 'array'
     ];
 
-
     protected $table = 'products';
     public $timestamps = false;
-
-
 
     protected $fillable = [
         'name', 'slug', 'details', 'price', 'description', 'updated_at', 'created_at','quantity'
@@ -66,6 +63,11 @@ class Product extends Model
     public function values()
     {
         return $this->belongsToMany(AttributeValue::class,'product_variant','product_id','attribute_value_id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class)->whereNull('parent_id');
     }
 
 

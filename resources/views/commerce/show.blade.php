@@ -70,6 +70,7 @@
                                     @csrf
                                     <div class="col-md-111 mb-105">
                                     @foreach($attributes as  $attribute)
+                                        <h4>
                                         <div class="pro__dtl__color">
                                         </div>
                                         <div class="form-group">
@@ -81,7 +82,9 @@
                                                 @endif
                                                 @endforeach
                                             </select>
+
                                         </div>
+                                        </h4>
                                     @endforeach
                                     </div>
                                     <br>
@@ -104,7 +107,7 @@
         </div>
     </section>
     <!-- End Product Details -->
-    <!-- Start Product tab -->
+    <!-- Start Product tab  Comments-->
     <section class="htc__product__details__tab bg__white pb--120">
         <div class="container">
             <div class="row">
@@ -120,135 +123,45 @@
                 <div class="col-md-12">
                     <div class="product__details__tab__content">
                         <!-- Start Single Content -->
-                        <div role="tabpanel" id="description" class="product__tab__content fade in active">
-                            <div class="product__description__wrap">
-                            </div>
-                        </div>
-                        <!-- End Single Content -->
-                        <!-- Start Single Content -->
-                        <div role="tabpanel" id="reviews" class="product__tab__content fade">
+                        <div role="tabpanel">
                             <div class="review__address__inner">
                                 <!-- Start Single Review -->
-                                <div class="pro__review">
-                                    <div class="review__thumb">
-                                        <img src="images/review/1.jpg" alt="review images">
-                                    </div>
-                                    <div class="review__details">
-                                        <div class="review__info">
-                                            <h4><a href="#">Gerald Barnes</a></h4>
-                                            <ul class="rating">
-                                                <li><i class="zmdi zmdi-star"></i></li>
-                                                <li><i class="zmdi zmdi-star"></i></li>
-                                                <li><i class="zmdi zmdi-star"></i></li>
-                                                <li><i class="zmdi zmdi-star-half"></i></li>
-                                                <li><i class="zmdi zmdi-star-half"></i></li>
-                                            </ul>
-                                            <div class="rating__send">
-                                                <a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
-                                                <a href="#"><i class="zmdi zmdi-close"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="review__date">
-                                            <span>27 Jun, 2016 at 2:30pm</span>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at estei to bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-                                    </div>
-                                </div>
-                                <!-- End Single Review -->
-                                <!-- Start Single Review -->
-                                <div class="pro__review ans">
-                                    <div class="review__thumb">
-                                        <img src="images/review/2.jpg" alt="review images">
-                                    </div>
-                                    <div class="review__details">
-                                        <div class="review__info">
-                                            <h4><a href="#">Gerald Barnes</a></h4>
-                                            <ul class="rating">
-                                                <li><i class="zmdi zmdi-star"></i></li>
-                                                <li><i class="zmdi zmdi-star"></i></li>
-                                                <li><i class="zmdi zmdi-star"></i></li>
-                                                <li><i class="zmdi zmdi-star-half"></i></li>
-                                                <li><i class="zmdi zmdi-star-half"></i></li>
-                                            </ul>
-                                            <div class="rating__send">
-                                                <a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
-                                                <a href="#"><i class="zmdi zmdi-close"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="review__date">
-                                            <span>27 Jun, 2016 at 2:30pm</span>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at estei to bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-                                    </div>
-                                </div>
-                                <!-- End Single Review -->
-                            </div>
-                            <!-- Start RAting Area -->
-                            <div class="rating__wrap">
-                                <h2 class="rating-title">Write  A review</h2>
-                                <h4 class="rating-title-2">Your Rating</h4>
-                                <div class="rating__list">
-                                    <!-- Start Single List -->
-                                    <ul class="rating">
-                                        <li><i class="zmdi zmdi-star-half"></i></li>
-                                    </ul>
-                                    <!-- End Single List -->
-                                    <!-- Start Single List -->
-                                    <ul class="rating">
-                                        <li><i class="zmdi zmdi-star-half"></i></li>
-                                        <li><i class="zmdi zmdi-star-half"></i></li>
-                                    </ul>
-                                    <!-- End Single List -->
-                                    <!-- Start Single List -->
-                                    <ul class="rating">
-                                        <li><i class="zmdi zmdi-star-half"></i></li>
-                                        <li><i class="zmdi zmdi-star-half"></i></li>
-                                        <li><i class="zmdi zmdi-star-half"></i></li>
-                                    </ul>
-                                    <!-- End Single List -->
-                                    <!-- Start Single List -->
-                                    <ul class="rating">
-                                        <li><i class="zmdi zmdi-star-half"></i></li>
-                                        <li><i class="zmdi zmdi-star-half"></i></li>
-                                        <li><i class="zmdi zmdi-star-half"></i></li>
-                                        <li><i class="zmdi zmdi-star-half"></i></li>
-                                    </ul>
-                                    <!-- End Single List -->
-                                    <!-- Start Single List -->
-                                    <ul class="rating">
-                                        <li><i class="zmdi zmdi-star-half"></i></li>
-                                        <li><i class="zmdi zmdi-star-half"></i></li>
-                                        <li><i class="zmdi zmdi-star-half"></i></li>
-                                        <li><i class="zmdi zmdi-star-half"></i></li>
-                                        <li><i class="zmdi zmdi-star-half"></i></li>
-                                    </ul>
-                                    <!-- End Single List -->
-                                </div>
-                            </div>
-                            <!-- End RAting Area -->
-                            <div class="review__box">
-                                <form id="review-form">
-                                    <div class="single-review-form">
-                                        <div class="review-box name">
-                                            <input type="text" placeholder="Type your name">
-                                            <input type="email" placeholder="Type your email">
-                                        </div>
-                                    </div>
-                                    <div class="single-review-form">
-                                        <div class="review-box message">
-                                            <textarea placeholder="Write your review"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="review-btn">
-                                        <a class="fv-btn" href="#">submit review</a>
-                                    </div>
-                                </form>
+                                @include('commerce.partial.comment_replies', ['comments' => $product->comments, 'product_id' => $product->id])
                             </div>
                         </div>
-                        <!-- End Single Content -->
+                        <!-- End Single Review -->
+                    </div>
+                    <!-- Start RAting Area -->
+
+                    <!-- End RAting Area -->
+                    <div class="review__box">
+                        <div class="rating__wrap">
+                            <h2 class="rating-title">Write  A review</h2>
+                        </div>
+                        <form id="review-form"  method="post" action="{{route('comment.store')}}">
+                            @csrf
+                            <div class="single-review-form">
+                                <div class="review-box name">
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}" />
+                                </div>
+                            </div>
+                            <div class="single-review-form">
+                                <div class="review-box message">
+                                    <textarea name="comment_body" placeholder="Write your review"></textarea>
+                                </div>
+                            </div>
+                            <div class="review-btn">
+                                <button  class="btn btn-secondary" type="submit">review</button>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
+
+                <!-- End Single Content -->
             </div>
+        </div>
+        </div>
         </div>
     </section>
     <!-- End Product tab -->
