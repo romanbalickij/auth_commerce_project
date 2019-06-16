@@ -29,7 +29,7 @@ class HomeController extends Controller
 
         $product = Product::find($request->id);
         $rating = new Rating;
-        $rating->user_id = 1;
+        $rating->user_id =  auth()->user() ? auth()->user()->id : null;
         $rating->rating = $request->rate;
         $product->ratings()->save($rating);
         return redirect()->back();

@@ -44,11 +44,12 @@
                             </div>
                             <form action="{{route('postStar', $product->id)}}" id="addStar" method="POST">
                                 @csrf
-                                <input id="input-1" name="rate" class="rating rating-loading" data-min="0" data-max="5" data-step="1" value="{{ $product->averageRating }}" data-size="xs">
+                                <input id="input-1" name="rate" class="rating rating-loading" data-min="0" data-max="5"
+                                       data-step="1" value="{{ $product->averageRating }}" data-size="xs">
                                 <input type="hidden" name="id" required="" value="{{ $product->id }}">
-                                <span class="review-no">{{$product->ratingPercent ( 10 )}} reviews</span>
+{{--                                <span class="review-no">{{$product->ratingPercent ( 10 )}} reviews</span>--}}
                                 <br/>
-                                <button  type="submit" class="btn btn-success">Review</button>
+                                <button type="submit" class="btn btn-success">Review</button>
                             </form>
                             <div class="pro__dtl__rating">
                                 <div>
