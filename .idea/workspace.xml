@@ -246,9 +246,9 @@
       <path value="$PROJECT_DIR$/vendor/willvincent/laravel-rateable" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="205" />
-    <option name="y" value="282" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="124" />
+    <option name="y" value="91" />
     <option name="width" value="1161" />
     <option name="height" value="594" />
   </component>
@@ -432,18 +432,17 @@
       <workItem from="1560449077962" duration="5305000" />
       <workItem from="1560530470248" duration="5003000" />
       <workItem from="1560613972849" duration="719000" />
-      <workItem from="1560697670103" duration="2546000" />
+      <workItem from="1560697670103" duration="2620000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="441193000" />
+    <option name="totallyTimeSpent" value="441267000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="205" y="282" width="1161" height="594" extended-state="1" />
-    <editor active="true" />
+    <frame x="124" y="91" width="1161" height="594" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49763033" visible="true" weight="0.30582958" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49763033" visible="true" weight="0.30582958" />
       <window_info id="Structure" order="1" sideWeight="0.50236964" side_tool="true" weight="0.26336792" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -457,7 +456,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49865472" visible="true" weight="0.120430104" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49865472" visible="true" weight="0.3655914" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5013453" side_tool="true" weight="0.43091336" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
