@@ -48,9 +48,9 @@
                                 <input type="text" name="email" placeholder="Email*">
                                 <input type="password" name="password" placeholder="Password*">
 
-                                <div class="tabs__checkbox">
-                                    <span class="forget"><a href="#">Forget Pasword?</a></span>
-                                </div>
+{{--                                <div class="tabs__checkbox">--}}
+{{--                                    <span class="forget"><a href="#">Forget Pasword?</a></span>--}}
+{{--                                </div>--}}
                                 <div class="htc__login__btn mt--30">
                                    <button type="submit" class="btn btn-secondary">Login</button>
                                 </div>
