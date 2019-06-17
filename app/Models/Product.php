@@ -93,6 +93,8 @@ class Product extends Model
         } elseif($sort == 'expensive') {
             return self::orderBy('price', 'desc')->paginate(5);
         }
+
+
     }
 
     public static function sortPriceMinMax($min, $max){
@@ -205,6 +207,9 @@ class Product extends Model
         return $tags->contains($tagId);
     }
 
+    public function increaseView(){
+        $this->increment('views');
+    }
 
 
 }

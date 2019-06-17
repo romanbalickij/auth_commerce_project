@@ -14,7 +14,7 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-
+        /**this not good **/
        // factory(Product::class,4)->create();
 //
 //        $now = Carbon::now()->toDateTimeString();
@@ -105,8 +105,10 @@ class ProductTableSeeder extends Seeder
 //        }
 //        // Select random entries to be featured
 //        Product::whereIn('id', [1, 12, 22, 31, 41, 43, 47, 51, 53,61, 69, 73, 80])->update(['featured' => true]);
+
+        /**this is good factory*/
+        factory(Product::class,500)->create();
     }
 
 }
 
-factory(Product::class,50)->create();

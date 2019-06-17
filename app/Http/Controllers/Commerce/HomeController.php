@@ -20,6 +20,7 @@ class HomeController extends Controller
      public function show($slug)
      {
          $product = Product::where('slug', $slug)->firstOrFail();
+         $product->increaseView();
          $attributes = $product->attributes()->get();
          $productOptions = $product->values()->get();
          $comments = $product->comments()->get();

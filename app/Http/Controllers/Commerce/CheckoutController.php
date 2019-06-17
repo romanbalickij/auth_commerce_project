@@ -27,6 +27,12 @@ class CheckoutController extends Controller
             return  back()->withErrors('Sorry! on of the product in your cart is no longer  available');
         }
         $order =  Order::createOrders($request);
+
+        /**insert intro database product_order
+        @product_id
+        @order_id
+        @quantity
+         */
         $order->createOrderProductTable(Product::getProductInCart()->id,
             Product::getProductInCart()->qty, Product::orderProductOptions());
 
