@@ -12,7 +12,7 @@
                 </div>
                 <div class="off__contact">
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="#">
                             <img src="/commerce/images/logo/logo.png" alt="logo">
                         </a>
                     </div>
@@ -28,8 +28,6 @@
                     <li><a href="#"><img src="/commerce/images/sidebar-img/7.jpg" alt="sidebar images"></a></li>
                     <li><a href="#"><img src="/commerce/images/sidebar-img/8.jpg" alt="sidebar images"></a></li>
                 </ul>
-
-
             </div>
         </div>
         <!-- End Offset MEnu -->

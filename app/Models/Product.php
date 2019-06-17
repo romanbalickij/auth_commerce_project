@@ -70,7 +70,6 @@ class Product extends Model
         return $this->hasMany(Comment::class)->whereNull('parent_id');
     }
 
-
     public function presentPrice()
     {
         return money_format('$%i', $this->price);
@@ -80,7 +79,6 @@ class Product extends Model
     {
         if($this->image != null) {
             return '/storage/'.$this->image;
-          //  return '/commerce/image/'.$this->image;
         }
     }
 
@@ -97,12 +95,9 @@ class Product extends Model
         }
     }
 
-
     public static function sortPriceMinMax($min, $max){
         return self::whereBetween('price', [$min, $max]);
     }
-
-
 
     public static function searchProducts($product){
        return self::search($product->search)->paginate(5);

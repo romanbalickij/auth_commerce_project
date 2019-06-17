@@ -47,7 +47,7 @@
                                 <input id="input-1" name="rate" class="rating rating-loading" data-min="0" data-max="5"
                                        data-step="1" value="{{ $product->averageRating }}" data-size="xs">
                                 <input type="hidden" name="id" required="" value="{{ $product->id }}">
-{{--                                <span class="review-no">{{$product->ratingPercent ( 10 )}} reviews</span>--}}
+                                {{--                                <span class="review-no">{{$product->ratingPercent ( 10 )}} reviews</span>--}}
                                 <br/>
                                 <button type="submit" class="btn btn-success">Review</button>
                             </form>
@@ -71,8 +71,6 @@
                                     <div class="col-md-111 mb-105">
                                     @foreach($attributes as  $attribute)
                                         <h4>
-                                        <div class="pro__dtl__color">
-                                        </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlSelect1"> Choose {{$attribute->name}}</label>
                                             <select class="form-control" name="attributeValue[]" id="exampleFormControlSelect1">
@@ -82,19 +80,17 @@
                                                 @endif
                                                 @endforeach
                                             </select>
-
                                         </div>
                                         </h4>
                                     @endforeach
-                                    </div>
-                                    <br>
-                                    <input type="hidden" name="id" value="{{$product->id}}">
-                                    <input type="hidden" name="name" value="{{$product->name}}">
-                                    <input type="hidden" name="price" value="{{$product->price}}">
+                                        </div>
+                                        <br>
+                                        <input type="hidden" name="id" value="{{$product->id}}">
+                                        <input type="hidden" name="name" value="{{$product->name}}">
+                                        <input type="hidden" name="price" value="{{$product->price}}">
                                     @if($product->quantity > 0)
                                         <button type="submit"  class="btn btn-secondary">Add To Cart</button>
                                     @endif
-
                                 </form>
                                 </li>
                             </ul>
@@ -107,7 +103,7 @@
         </div>
     </section>
     <!-- End Product Details -->
-    <!-- Start Product tab  Comments-->
+    <!-- Start Product   Comments-->
     <section class="htc__product__details__tab bg__white pb--120">
         <div class="container">
             <div class="row">
@@ -125,7 +121,7 @@
                         <!-- Start Single Content -->
                         <div role="tabpanel">
                             <div class="review__address__inner">
-                                <!-- Start Single Review -->
+                                <!-- Show Comments  -->
                                 @include('commerce.partial.comment_replies', ['comments' => $product->comments, 'product_id' => $product->id])
                             </div>
                         </div>
@@ -138,6 +134,7 @@
                         <div class="rating__wrap">
                             <h2 class="rating-title">Write  A review</h2>
                         </div>
+                        <!-- Create Comments  -->
                         <form id="review-form"  method="post" action="{{route('comment.store')}}">
                             @csrf
                             <div class="single-review-form">
@@ -151,7 +148,11 @@
                                 </div>
                             </div>
                             <div class="review-btn">
-                                <button  class="btn btn-secondary" type="submit">review</button>
+                                @if(Auth::check())
+                                     <button  class="btn btn-secondary" type="submit">review</button>
+                                @else
+                                     <h4>Please register to add a review</h4>
+                                @endif
                             </div>
                         </form>
 

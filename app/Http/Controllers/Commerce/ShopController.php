@@ -25,7 +25,6 @@ class ShopController extends Controller
             $request->input('max'));
 
      }
-
         $categories = Category::all();
         $tags = Tag::all();
         return view('commerce.shop', compact('products', 'categories', 'tags'));

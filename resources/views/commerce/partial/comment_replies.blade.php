@@ -6,12 +6,14 @@
         <form method="post" action="{{ route('comment.store') }}">
             @csrf
             <div class="form-group">
-                <input type="text" name="body" class="form-control" />
+                <input type="text" name="comment_body" class="form-control" />
                 <input type="hidden" name="product_id" value="{{ $product_id }}" />
                 <input type="hidden" name="parent_id" value="{{ $comment->id }}" />
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-warning" value="Reply" />
+                @if(Auth::check())
+                    <input type="submit" class="btn btn-warning" value="Reply" />
+                @endif
             </div>
         </form>
         @include('commerce.partial.comment_replies', ['comments' => $comment->replies])

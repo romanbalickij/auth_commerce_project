@@ -11,13 +11,7 @@ class CommentController extends Controller
 {
     public function store(Request $request)
     {
-        $comment = new Comment;
-        $comment->body = $request->get('comment_body');
-        $comment->user()->associate($request->user());
-        $comment->parent_id = $request->get('parent_id');
-        $product = Product::find($request->get('product_id'));
-        $product->comments()->save($comment);
-
+        Comment::createComments($request);
         return back();
 
     }

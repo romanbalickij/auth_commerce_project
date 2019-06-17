@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tmart-Minimalist eCommerce HTML5 Template</title>
+    <title>Tmart-Minimalist eCommerce</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -30,7 +30,6 @@
     <link rel="stylesheet" href="/commerce/css/checkout.css">
     <link rel="stylesheet" href="/commerce/css/stripe.css">
     <link rel="stylesheet" href="/commerce/css/sort-price.css">
-{{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
 
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
@@ -80,115 +79,7 @@
     @yield('content')
     <!-- End Our Product Area -->
     <!-- Start Blog Area -->
-{{--    <section class="htc__blog__area bg__white pb--130">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-xs-12">--}}
-{{--                    <div class="section__title text-center">--}}
-{{--                        <h2 class="title__line">Recent News</h2>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="row">--}}
-{{--                <div class="blog__wrap clearfix mt--60 xmt-30">--}}
-{{--                    <!-- Start Single Blog -->--}}
-{{--                    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">--}}
-{{--                        <div class="blog foo">--}}
-{{--                            <div class="blog__inner">--}}
-{{--                                <div class="blog__thumb">--}}
-{{--                                    <a href="blog-details.html">--}}
-{{--                                        <img src="/commerce/images/blog/blog-img/1.jpg" alt="blog images">--}}
-{{--                                    </a>--}}
-{{--                                    <div class="blog__post__time">--}}
-{{--                                        <div class="post__time--inner">--}}
-{{--                                            <span class="date">14</span>--}}
-{{--                                            <span class="month">sep</span>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="blog__hover__info">--}}
-{{--                                    <div class="blog__hover__action">--}}
-{{--                                        <p class="blog__des"><a href="blog-details.html">Lorem ipsum dolor sit consectetu.</a></p>--}}
-{{--                                        <ul class="bl__meta">--}}
-{{--                                            <li>By :<a href="#">Admin</a></li>--}}
-{{--                                            <li>Product</li>--}}
-{{--                                        </ul>--}}
-{{--                                        <div class="blog__btn">--}}
-{{--                                            <a class="read__more__btn" href="blog-details.html">read more</a>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <!-- End Single Blog -->--}}
-{{--                    <!-- Start Single Blog -->--}}
-{{--                    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">--}}
-{{--                        <div class="blog foo">--}}
-{{--                            <div class="blog__inner">--}}
-{{--                                <div class="blog__thumb">--}}
-{{--                                    <a href="blog-details.html">--}}
-{{--                                        <img src="/commerce/images/blog/blog-img/2.jpg" alt="blog images">--}}
-{{--                                    </a>--}}
-{{--                                    <div class="blog__post__time">--}}
-{{--                                        <div class="post__time--inner">--}}
-{{--                                            <span class="date">14</span>--}}
-{{--                                            <span class="month">sep</span>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="blog__hover__info">--}}
-{{--                                    <div class="blog__hover__action">--}}
-{{--                                        <p class="blog__des"><a href="blog-details.html">Lorem ipsum dolor sit consectetu.</a></p>--}}
-{{--                                        <ul class="bl__meta">--}}
-{{--                                            <li>By :<a href="#">Admin</a></li>--}}
-{{--                                            <li>Product</li>--}}
-{{--                                        </ul>--}}
-{{--                                        <div class="blog__btn">--}}
-{{--                                            <a class="read__more__btn" href="blog-details.html">read more</a>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <!-- End Single Blog -->--}}
-{{--                    <!-- Start Single Blog -->--}}
-{{--                    <div class="col-md-4 col-lg-4 hidden-sm col-xs-12">--}}
-{{--                        <div class="blog foo">--}}
-{{--                            <div class="blog__inner">--}}
-{{--                                <div class="blog__thumb">--}}
-{{--                                    <a href="blog-details.html">--}}
-{{--                                        <img src="/commerce/images/blog/blog-img/3.jpg" alt="blog images">--}}
-{{--                                    </a>--}}
-{{--                                    <div class="blog__post__time">--}}
-{{--                                        <div class="post__time--inner">--}}
-{{--                                            <span class="date">14</span>--}}
-{{--                                            <span class="month">sep</span>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="blog__hover__info">--}}
-{{--                                    <div class="blog__hover__action">--}}
-{{--                                        <p class="blog__des"><a href="blog-details.html">Lorem ipsum dolor sit consectetu.</a></p>--}}
-{{--                                        <ul class="bl__meta">--}}
-{{--                                            <li>By :<a href="#">Admin</a></li>--}}
-{{--                                            <li>Product</li>--}}
-{{--                                        </ul>--}}
-{{--                                        <div class="blog__btn">--}}
-{{--                                            <a class="read__more__btn" href="blog-details.html">read more</a>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <!-- End Single Blog -->--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
-    <!-- End Blog Area -->
+
     <!-- Start Footer Area -->
     <footer class="htc__foooter__area gray-bg">
         <div class="container">
@@ -232,9 +123,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
 <script src="/commerce/js/sort-price.js" type="text/javascript"></script>
 <script type="text/javascript">
-
     $("#input-id").rating();
-
 </script>
 
 @yield('js')

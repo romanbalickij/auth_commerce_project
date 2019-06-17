@@ -18,4 +18,16 @@ class Comment extends Model
     {
         return $this->hasMany(Comment::class, 'parent_id');
     }
+
+    public static function createComments($value)
+    {
+        $comment =  new static;
+        $comment->body = $value->comment_body;
+        $comment->user()->associate($value->user());
+        $comment->parent_id = $value->parent_id;
+        $product = Product::find($value->product_id);
+        $product->comments()->save($comment);
+    }
+
+
 }

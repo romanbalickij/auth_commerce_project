@@ -23,12 +23,12 @@ $factory->define(Attribute::class, function (Faker $faker) {
 
 
     $attributeMaterials = ['colour', 'size', 'materials'];
-    $products = Product::inRandomOrder()->get('id')->first();
+  //  $products = Product::inRandomOrder()->get('id')->first();
 
    return  [
       $attribute =  Attribute::create( [
             'name'       => $faker->randomElement($attributeMaterials),
-            'product_id' =>$faker->numberBetween(40,44)   //Product::all()->pluck('id')->random()
+            'product_id' =>Product::all()->pluck('id')->random()
         ]),
 
     ];

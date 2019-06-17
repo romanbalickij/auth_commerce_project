@@ -17,12 +17,12 @@ class CheckoutController extends Controller
 
     public function index()
     {
-        Product::getProductInCart();
         return view('commerce.checkout');
     }
 
     public function store(CheckoutRequest $request)
     {
+        /**if the product stock is not a customer can not buy it**/
         if(Product::productsAreNoLongerAvailable()) {
             return  back()->withErrors('Sorry! on of the product in your cart is no longer  available');
         }
@@ -30,7 +30,9 @@ class CheckoutController extends Controller
         $order->createOrderProductTable(Product::getProductInCart()->id,
             Product::getProductInCart()->qty, Product::orderProductOptions());
 
+        /**quantity control of products**/
         Product:: decreaseQuantities();
+
         Product::checkoutDetailsCart($request->stripeToken, $request->email);
         Mail::to($request->email)->send(new OrderProduct($order));
         Cart::destroy();

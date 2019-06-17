@@ -24,8 +24,7 @@ $factory->define(AttributeValue::class, function (Faker $faker) {
     $attributeMaterials = ['plaque','plywood','skin', 'artificial leather'];
     $attributes = Attribute::all();
 
-
-    for ($i = 0; $i <=30; $i++) {
+    for ($i = 0; $i <=20; $i++) {
 
         foreach ($attributes as $attribute) {
             if ($attribute->name == 'colour') {

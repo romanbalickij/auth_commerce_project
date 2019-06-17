@@ -15,7 +15,7 @@
                 <li><a href="{{route('login.form')}}">@lang('app.login')</a></li>
             @endif
                 </li>
-                <li class="drop"><a href="blog.html">@lang('app.language')</a>
+                <li class="drop"><a href="#">@lang('app.language')</a>
                     <ul class="dropdown">
                         <li><a class="dropdown-item" href="lang/en">English</a></li>
                         <li><a class="dropdown-item" href="lang/fr">French</a></li>
