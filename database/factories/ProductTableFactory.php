@@ -16,6 +16,7 @@ $factory->define(Product::class, function (Faker $faker) {
     $categoryId = Category::inRandomOrder()->get('id')->first();
     $tagId      = Tag::inRandomOrder()->get('id')->first();
     $products   = Product::inRandomOrder()->get('id')->first();
+
      return [
       $product  =  Product::create([
             'name'    =>$faker->unique()->sentence($nbWords = 3, $variableNbWords = true),

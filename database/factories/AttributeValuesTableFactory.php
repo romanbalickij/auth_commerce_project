@@ -24,12 +24,12 @@ $factory->define(AttributeValue::class, function (Faker $faker) {
     $attributeMaterials = ['plaque','plywood','skin', 'artificial leather'];
     $attributes = Attribute::all();
 
-    for ($i = 0; $i <=20; $i++) {
+    for ($i = 0; $i <=50; $i++) {
 
         foreach ($attributes as $attribute) {
             if ($attribute->name == 'colour') {
                 $attributeValue = \App\Models\AttributeValue::create([
-                    'value' => $faker->colorName,
+                    'value' =>$faker->unique()->colorName,
                     'attribute_id' => $attribute->id
                 ]);
 

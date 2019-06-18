@@ -23,6 +23,7 @@ class CreateProductVariantTable extends Migration
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('attribute_value_id')->references('id')->on('attribute_values')->onDelete('cascade');
 
+            $table->primary(['product_id', 'attribute_value_id']);
         });
     }
 

@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ae1c4512-acb1-4399-825b-019e6019f97a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/AttributeValuesTableFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/AttributeValuesTableFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ProductTableFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ProductTableFactory.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,62 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Commerce/AuthController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Commerce/LocalizationController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-              <folding>
-                <element signature="e#49#77#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Localization.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/commerce/partial/menu.blade.php">
+        <entry file="file://$PROJECT_DIR$/database/factories/AttributeValuesTableFactory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-55">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/commerce/auth/login.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Commerce/CartController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-              <folding>
-                <element signature="e#50#94#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="-73">
+              <caret line="23" column="76" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -108,7 +59,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Voyager/ProductController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_11_090120_create_product_variant_table.php" />
         <option value="$PROJECT_DIR$/app/Models/AttributeValue.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_28_140113_create_product_variants_table.php" />
@@ -137,7 +87,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_05_16_131426_create_coupons_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_21_161604_create_category_product.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_28_132041_create_attributes_table.php" />
-        <option value="$PROJECT_DIR$/database/factories/AttributeValuesTableFactory.php" />
         <option value="$PROJECT_DIR$/database/factories/AttributeProductTableFactory.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Commerce/ShopController.php" />
         <option value="$PROJECT_DIR$/resources/views/commerce/partial/add_cart.blade.php" />
@@ -147,8 +96,6 @@
         <option value="$PROJECT_DIR$/app/Models/Comment.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Commerce/CheckoutController.php" />
         <option value="$PROJECT_DIR$/database/seeds/ProductTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/database/factories/ProductTableFactory.php" />
         <option value="$PROJECT_DIR$/database/seeds/AttributeProductTableSeed.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Commerce/HomeController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Commerce/CartController.php" />
@@ -159,6 +106,10 @@
         <option value="$PROJECT_DIR$/resources/views/commerce/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Commerce/LocalizationController.php" />
         <option value="$PROJECT_DIR$/resources/views/commerce/partial/menu.blade.php" />
+        <option value="$PROJECT_DIR$/database/seeds/CouponTableSeed.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/database/factories/AttributeValuesTableFactory.php" />
+        <option value="$PROJECT_DIR$/database/factories/ProductTableFactory.php" />
       </list>
     </option>
   </component>
@@ -286,8 +237,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="431" />
-    <option name="y" value="154" />
+    <option name="x" value="204" />
+    <option name="y" value="149" />
     <option name="width" value="1161" />
     <option name="height" value="593" />
   </component>
@@ -319,57 +270,6 @@
             <path>
               <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Commerce" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Middleware" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
-              <item name="Cart" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
-              <item name="Comment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
               <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -380,12 +280,6 @@
             <path>
               <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="factories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -404,15 +298,28 @@
             <path>
               <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="commerce" type="462c0819:PsiDirectoryNode" />
-              <item name="partial" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="auth.loc" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="products" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="auth.loc" type="b2602c69:ProjectViewProjectNode" />
@@ -541,17 +448,20 @@
       <workItem from="1560697670103" duration="2620000" />
       <workItem from="1560713167279" duration="4702000" />
       <workItem from="1560785937688" duration="14683000" />
+      <workItem from="1560804439597" duration="357000" />
+      <workItem from="1560806175947" duration="389000" />
+      <workItem from="1560848242942" duration="1186000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="463996000" />
+    <option name="totallyTimeSpent" value="465928000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="126" y="164" width="1161" height="593" extended-state="0" />
+    <frame x="204" y="149" width="1161" height="593" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49763033" visible="true" weight="0.303139" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49763033" visible="true" weight="0.32017937" />
       <window_info id="Structure" order="1" sideWeight="0.50236964" side_tool="true" weight="0.26336792" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -565,7 +475,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49865472" visible="true" weight="0.06896552" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49865472" visible="true" weight="0.06465517" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5013453" side_tool="true" weight="0.43091336" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -630,13 +540,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_21_161604_create_category_product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_23_094847_add_token_to_users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -818,13 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/ProductTableFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/CategoryTableSeed.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -846,45 +742,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/AttributeValuesTableFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/AttributeProductTableFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/ProductTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="742">
           <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/AttributeValuesTableSeed.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/AttributeProductTableSeed.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -943,13 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/commerce/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/AttributeValue.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
@@ -957,9 +811,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/commerce/partial/menu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/commerce/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Commerce/CartController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="230">
           <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
           <folding>
             <element signature="e#50#94#0#PHP" expanded="true" />
@@ -967,10 +835,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Commerce/AuthController.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/CouponTableSeed.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
+        <state relative-caret-position="272">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+          <folding>
+            <element signature="e#7#29#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Localization.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -984,17 +869,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Localization.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Commerce/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        <state relative-caret-position="240">
+          <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/commerce/partial/menu.blade.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/AttributeValuesTableSeed.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-55">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="60">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/AttributeProductTableSeed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/AttributeProductTableFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/ProductTableFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/AttributeValuesTableFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-73">
+          <caret line="23" column="76" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="76" />
         </state>
       </provider>
     </entry>

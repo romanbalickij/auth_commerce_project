@@ -19,15 +19,14 @@ class CreateOrderProductTable extends Migration
             $table->unsignedInteger('product_id')->nullable();
             $table->integer('quantity')->unsigned();
             $table->json('properties')->nullable();
-
+            $table->timestamps();
 
             $table->foreign('order_id')->references('id')->on('orders')
                 ->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('product_id')->references('id')->on('products')
                 ->onUpdate('cascade')->onDelete('cascade');
 
-
-            $table->timestamps();
+            $table->primary(['order_id', 'product_id']);
         });
     }
 
