@@ -28,7 +28,6 @@ $factory->define(Attribute::class, function (Faker $faker) {
    return  [
       $attribute =  Attribute::create( [
             'name'       => $faker->randomElement($attributeMaterials),
-            'product_id' =>Product::all()->pluck('id')->random()
         ]),
 
     ];
