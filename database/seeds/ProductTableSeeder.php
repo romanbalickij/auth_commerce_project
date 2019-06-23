@@ -107,7 +107,7 @@ class ProductTableSeeder extends Seeder
 //        Product::whereIn('id', [1, 12, 22, 31, 41, 43, 47, 51, 53,61, 69, 73, 80])->update(['featured' => true]);
 
         /**this is good factory*/
-        factory(Product::class,500)->create();
+        factory(Product::class,50)->create();
     }
 
 }
