@@ -11,13 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+          $this->call(CouponTableSeed::class);
           $this->call(CategoryTableSeed::class);
           $this->call(TagsTablleSeed::class);
           $this->call(AttributeProductTableSeed::class);
           $this->call(AttributeValuesTableSeed::class);
           $this->call(ProductTableSeeder::class);
 
-          $this->call(CouponTableSeed::class);
+
 
 
     }
