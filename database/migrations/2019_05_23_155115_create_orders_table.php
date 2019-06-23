@@ -17,8 +17,6 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
 
             $table->integer('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')
-                ->onUpdate('cascade')->onDelete('set null');
             $table->string('email')->nullable();
             $table->string('name')->nullable();
             $table->string('username')->nullable();

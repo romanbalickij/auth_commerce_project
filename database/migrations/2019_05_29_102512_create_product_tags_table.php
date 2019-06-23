@@ -23,7 +23,7 @@ class CreateProductTagsTable extends Migration
 
             $table->timestamps();
 
-            $table->primary(['product_id', 'tag_id']);
+         //   $table->primary(['product_id', 'tag_id']);
         });
     }
 

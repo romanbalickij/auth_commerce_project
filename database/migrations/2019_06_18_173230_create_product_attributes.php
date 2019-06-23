@@ -24,7 +24,7 @@ class CreateProductAttributes extends Migration
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('attribute_id')->references('id')->on('attributes')->onDelete('cascade');
 
-            $table->primary(['product_id', 'attribute_id']);
+          //  $table->primary(['product_id', 'attribute_id']);
         });
     }
 
