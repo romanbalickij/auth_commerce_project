@@ -113,6 +113,7 @@ class Product extends Model
              'qty'     => 1,
              'price'   => $product->price,
              'options' => ['attributes' => $productAttribute]
+
          ])->associate('App\Models\Product');
     }
 

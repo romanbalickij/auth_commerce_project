@@ -13,7 +13,8 @@ class Attribute extends Model
 
     public function products(){
         return $this->belongsToMany(Product::class,'product_attributes',
-            'attribute_id', 'product_id')->withPivot('name');
+            'attribute_id',
+            'product_id')->withPivot('name');
     }
 
     public function values()

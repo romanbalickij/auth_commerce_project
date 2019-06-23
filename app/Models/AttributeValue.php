@@ -20,7 +20,6 @@ class AttributeValue extends Model
         return $this->belongsToMany(Product::class,'product_variant','attribute_value_id','product_id');
     }
 
-
     public static function getProductAttribute($attributesVariants)
     {
         $productAttribute = [];

@@ -14,7 +14,7 @@ class CreateProductTagsTable extends Migration
     public function up()
     {
         Schema::create('product_tags', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->integer('product_id')->unsigned()->nullable();
             $table->integer('tag_id')->unsigned()->nullable();
 

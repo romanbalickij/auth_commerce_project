@@ -15,7 +15,6 @@ class ShopController extends Controller
 
     public function index(Request $request){
 
-
      if($request->get('sort') == null) {
         $products = Product::orderBy('created_at', 'desc')->paginate(5);
      } else {
