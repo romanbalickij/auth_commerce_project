@@ -23,7 +23,7 @@ class Product extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'name', 'slug', 'details', 'price', 'description', 'updated_at', 'created_at','quantity'
+        'name', 'slug', 'details', 'price','image', 'description','featured', 'updated_at', 'created_at','quantity','date','views'
     ];
 
     protected $searchable = [
