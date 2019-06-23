@@ -17,12 +17,12 @@ class CategoryTableSeed extends Seeder
         $now = Carbon::now()->toDateTimeString();
 
         Category::insert([
-            ['name' => 'Accessories', 'slug' => 'Accessories1', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Homelife', 'slug' => 'Homelife1', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Kids & Baby', 'slug' => 'Kids & Baby1', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Stationery', 'slug' => 'Stationery1', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Health & Beauty', 'slug' => 'Health & Beauty1', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Home Appliances', 'slug' => 'Home Appliances1', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Accessories', 'slug' => 'Accessories', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Homelife', 'slug' => 'Homelife', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Kids & Baby', 'slug' => 'Kids & Baby', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Stationery', 'slug' => 'Stationery', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Health & Beauty', 'slug' => 'Health & Beauty', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Home Appliances', 'slug' => 'Home Appliances', 'created_at' => $now, 'updated_at' => $now],
             ['name' => 'Clothing', 'slug' => 'Clothing1', 'created_at' => $now, 'updated_at' => $now],
         ]);
     }

@@ -1,9 +1,8 @@
 <?php
 
 use App\Models\Attribute;
-use App\Models\Product;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+
 
 class AttributeProductTableSeed extends Seeder
 {
@@ -14,10 +13,11 @@ class AttributeProductTableSeed extends Seeder
      */
     public function run()
     {
-
-        factory(Attribute::class,3)->create();
-
+      Attribute::insert([
+            ['name' => 'colour'],
+            ['name' => 'size'],
+            ['name' => 'materials'],
+        ]);
     }
-
 
 }
