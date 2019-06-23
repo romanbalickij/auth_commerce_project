@@ -15,7 +15,7 @@ class AttributeProductTableSeed extends Seeder
     public function run()
     {
 
-        factory(Attribute::class,5)->create();
+        factory(Attribute::class,3)->create();
 
     }
 
