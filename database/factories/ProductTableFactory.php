@@ -26,7 +26,7 @@ $factory->define(Product::class, function (Faker $faker) {
             'image'   => '2.png',
             'description' => $faker->text($maxNbChars = 200),
             'quantity'=> rand(1, 10),
-            'date'    => $now,
+        //    'date'    => $now,
             'views'   => rand(1, 20)
 
         ])->categories()->attach($categoryId),
