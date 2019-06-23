@@ -52,7 +52,7 @@ class Product extends Model
 
     public function attributes()
     {
-        return $this->belongsToMany(Attribute::class,'product_attributes','product_id','attribute_id')->withPivot('name');
+        return $this->belongsToMany(Attribute::class,'product_attributes','product_id','attribute_id');
     }
 
     public function orders()
