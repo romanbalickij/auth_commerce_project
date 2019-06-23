@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Coupon extends Model
 {
 
+    protected  $fillable = ['code', 'type', 'percent_off'];
+
     public  static function  findByCoupon($code)
     {
         return self:: where('code', $code)->first();
