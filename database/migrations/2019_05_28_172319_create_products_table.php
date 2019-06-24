@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->boolean('featured')->default(0);
             $table->integer('quantity')->unsigned();
-            $table->time('date');
+            $table->timestamp('date');
             $table->integer('views')->nullable();
             $table->timestamps();
         });

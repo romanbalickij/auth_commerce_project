@@ -2,6 +2,7 @@
 
 use App\Models\Category;
 use App\Models\Product;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -14,8 +15,7 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-
-
+        $now        = Carbon::now()->toDateTimeString();
         // Simple Black Clock
         for ($i=1; $i <= 10; $i++) {
             $categoryId = Category::inRandomOrder()->get('id')->first();
@@ -28,6 +28,7 @@ class ProductTableSeeder extends Seeder
                 'image'    => 'h12-product-60-505x625.jpg',
                 'quantity' => rand(1, 10),
                 'views'    => rand(100, 9000),
+                'date'     => $now,
                 'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
 
             ])->categories()->attach($categoryId );
@@ -44,6 +45,7 @@ class ProductTableSeeder extends Seeder
                 'image'    => 'h5-product-34-505x625.jpg',
                 'quantity' => rand(1, 10),
                 'views'    => rand(100, 9000),
+                'date'     => $now,
                 'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
 
             ])->categories()->attach($categoryId );;
@@ -60,6 +62,7 @@ class ProductTableSeeder extends Seeder
                 'image'    => 'h5-product-28-505x625.jpg',
                 'quantity' => rand(1, 10),
                 'views'    => rand(100, 900),
+                'date'     => $now,
                 'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
 
             ])->categories()->attach($categoryId );
@@ -76,6 +79,7 @@ class ProductTableSeeder extends Seeder
                 'image'    => 'h1-product-4-505x625.jpg',
                 'quantity' => rand(1, 10),
                 'views'    => rand(100, 900),
+                'date'     => $now,
                 'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
 
 
@@ -93,6 +97,7 @@ class ProductTableSeeder extends Seeder
                 'image'    => '13.png',
                 'quantity' => rand(1, 10),
                 'views'    => rand(100, 900),
+                'date'     => $now,
                 'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
 
 
@@ -110,6 +115,7 @@ class ProductTableSeeder extends Seeder
                 'image'    => 'h1-product-2-505x625.jpg',
                 'quantity' => rand(1, 10),
                 'views'    => rand(100, 900),
+                'date'     => $now,
                 'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
 
             ]);
@@ -126,6 +132,7 @@ class ProductTableSeeder extends Seeder
                 'image'    => '14.png',
                 'quantity' => rand(1, 10),
                 'views'    => rand(100, 900),
+                'date'     => $now,
                 'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
 
             ])->categories()->attach($categoryId );;
