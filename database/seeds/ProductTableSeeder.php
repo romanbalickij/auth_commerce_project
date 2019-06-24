@@ -1,7 +1,7 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Product;
-use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -14,100 +14,126 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-        /**this not good **/
-       // factory(Product::class,4)->create();
-//
-//        $now = Carbon::now()->toDateTimeString();
-//        $str =  Str::slug('Simple Black Cfdflofdfckee');
-//        // Laptops
-//        for ($i=1; $i <= 10; $i++) {
-//           dd( Product::create([
-//
-//                'name' => 'Simple Black Clockew '.$i,
-//                'slug' => $str.$i,
-//                'details' => [13,14,15][array_rand([13,14,15])] . ' inch, ' . [1, 2, 3][array_rand([1, 2, 3])] .' TB SSD, 32GB RAM',
-//                'price' => rand(149999, 249999),
-//                'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
-//                'date' => $now,
-//            ])->categories()->attach(3));
-//        }
-//        // Make Laptop 1 a Desktop as well. Just to test multiple categories
-//        $product = Product::find(1);
-//        $product->categories()->attach(1);
-//        // Desktops
-//        for ($i = 1; $i <= 9; $i++) {
-//            Product::create([
-//                'name' => 'Simple Black Clock ' . $i,
-//                'slug' => $str . $i,
-//                'details' => [24, 25, 27][array_rand([24, 25, 27])] . ' inch, ' . [1, 2, 3][array_rand([1, 2, 3])] . ' TB SSD, 32GB RAM',
-//                'price' => rand(249999, 449999),
-//                'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
-//                'date' => $now,
-//
-//            ])->categories()->attach(2);;
-//        }
-//        // Phones
-//        for ($i = 1; $i <= 9; $i++) {
-//            Product::create([
-//                'name' => 'Wood Simple Chair V2 ' . $i,
-//                'slug' => $str . $i,
-//                'details' => [16, 32, 64][array_rand([16, 32, 64])] . 'GB, 5.' . [7, 8, 9][array_rand([7, 8, 9])] . ' inch screen, 4GHz Quad Core',
-//                'price' => rand(79999, 149999),
-//                'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
-//                'date' => $now,
-//            ])->categories()->attach(3);
-//        }
-//        // Tablets
-//        for ($i = 1; $i <= 9; $i++) {
-//            Product::create([
-//                'name' => 'Wood Simple Chair V2 ' . $i,
-//                'slug' => $str . $i,
-//                'details' => [16, 32, 64][array_rand([16, 32, 64])] . 'GB, 5.' . [10, 11, 12][array_rand([10, 11, 12])] . ' inch screen, 4GHz Quad Core',
-//                'price' => rand(49999, 149999),
-//                'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
-//                'date' => $now,
-//
-//            ])->categories()->attach(3);;
-//        }
-//        // TVs
-//        for ($i = 1; $i <= 9; $i++) {
-//            Product::create([
-//                'name' => 'Unero Round Sunglass ' . $i,
-//                'slug' => $str . $i,
-//                'details' => [46, 50, 60][array_rand([7, 8, 9])] . ' inch screen, Smart TV, 4K',
-//                'price' => rand(79999, 149999),
-//                'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
-//                'date' => $now,
-//
-//            ])->categories()->attach(4);;
-//        }
-//        // Cameras
-//        for ($i = 1; $i <= 9; $i++) {
-//            Product::create([
-//                'name' => 'Unero Round Sunglass ' . $i,
-//                'slug' => $str . $i,
-//                'details' => 'Full Frame DSLR, with 18-55mm kit lens.',
-//                'price' => rand(79999, 249999),
-//                'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
-//                'date' => $now,
-//            ]);
-//        }
-//        // Appliances
-//        for ($i = 1; $i <= 9; $i++) {
-//            Product::create([
-//                'name' => 'Appliance ' . $i,
-//                'slug' => $str . $i,
-//                'details' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, dolorum!',
-//                'price' => rand(79999, 149999),
-//                'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
-//                'date' => $now,
-//            ])->categories()->attach(5);;
-//        }
-//        // Select random entries to be featured
-//        Product::whereIn('id', [1, 12, 22, 31, 41, 43, 47, 51, 53,61, 69, 73, 80])->update(['featured' => true]);
+
+
+        // Simple Black Clock
+        for ($i=1; $i <= 10; $i++) {
+            $categoryId = Category::inRandomOrder()->get('id')->first();
+            Product::create([
+                'name'     =>  $name = 'Simple Black Clock'.$i ,
+                'slug'     => Str::slug($name) . $i,
+                'featured' => true,
+                'details'  =>'Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod temf incididunt ut labore et dolore magna aliqua.',
+                'price'    => rand(10, 24999),
+                'image'    => 'h12-product-60-505x625.jpg',
+                'quantity' => rand(1, 10),
+                'views'    => rand(100, 9000),
+                'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
+
+            ])->categories()->attach($categoryId );
+        }
+        //Brone Lamp Glasses
+        for ($i = 1; $i <= 10; $i++) {
+            $categoryId = Category::inRandomOrder()->get('id')->first();
+            Product::create([
+                'name'     =>  $name = 'Brone Lamp Glasses'.$i ,
+                'slug'     => Str::slug($name) . $i,
+                'featured' => true,
+                'details'  =>'Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod temf incididunt ut labore et dolore magna aliqua.',
+                'price'    => rand(10, 24999),
+                'image'    => 'h5-product-34-505x625.jpg',
+                'quantity' => rand(1, 10),
+                'views'    => rand(100, 9000),
+                'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
+
+            ])->categories()->attach($categoryId );;
+        }
+        // Simple Fabric Chair
+        for ($i = 1; $i <= 10; $i++) {
+            $categoryId = Category::inRandomOrder()->get('id')->first();
+            Product::create([
+                'name'     =>  $name = 'Wood Simple Chair V2'.$i ,
+                'slug'     => Str::slug($name) . $i,
+                'featured' => true,
+                'details'  =>'Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod temf incididunt ut labore et dolore magna aliqua.',
+                'price'    => rand(10, 2499),
+                'image'    => 'h5-product-28-505x625.jpg',
+                'quantity' => rand(1, 10),
+                'views'    => rand(100, 900),
+                'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
+
+            ])->categories()->attach($categoryId );
+        }
+        // Tablets
+        for ($i = 1; $i <= 9; $i++) {
+            $categoryId = Category::inRandomOrder()->get('id')->first();
+            Product::create([
+                'name'     =>  $name = 'Simple Fabric Chair '.$i ,
+                'slug'     => Str::slug($name) . $i,
+                'featured' => true,
+                'details'  =>'Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod temf incididunt ut labore et dolore magna aliqua.',
+                'price'    => rand(10, 2499),
+                'image'    => 'h1-product-4-505x625.jpg',
+                'quantity' => rand(1, 10),
+                'views'    => rand(100, 900),
+                'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
+
+
+            ])->categories()->attach($categoryId );;
+        }
+        // TVs
+        for ($i = 1; $i <= 9; $i++) {
+            $categoryId = Category::inRandomOrder()->get('id')->first();
+            Product::create([
+                'name'     =>  $name = 'Wood Complex Lamp Box'.$i ,
+                'slug'     => Str::slug($name) . $i,
+                'featured' => true,
+                'details'  =>'Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod temf incididunt ut labore et dolore magna aliqua.',
+                'price'    => rand(10, 2499),
+                'image'    => '13.png',
+                'quantity' => rand(1, 10),
+                'views'    => rand(100, 900),
+                'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
+
+
+            ])->categories()->attach($categoryId );
+        }
+        // Cameras
+        for ($i = 1; $i <= 9; $i++) {
+            $categoryId = Category::inRandomOrder()->get('id')->first();
+            Product::create([
+                'name'     =>  $name = 'BO&Play Wireless Speaker'.$i ,
+                'slug'     => Str::slug($name) . $i,
+                'featured' => true,
+                'details'  =>'Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod temf incididunt ut labore et dolore magna aliqua.',
+                'price'    => rand(10, 2499),
+                'image'    => 'h1-product-2-505x625.jpg',
+                'quantity' => rand(1, 10),
+                'views'    => rand(100, 900),
+                'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
+
+            ]);
+        }
+        // Appliances
+        for ($i = 1; $i <= 9; $i++) {
+            $categoryId = Category::inRandomOrder()->get('id')->first();
+            Product::create([
+                'name'     =>  $name = 'Liquid Unero Ginger Lily'.$i ,
+                'slug'     => Str::slug($name) . $i,
+                'featured' => true,
+                'details'  =>'Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod temf incididunt ut labore et dolore magna aliqua.',
+                'price'    => rand(10, 2499),
+                'image'    => '14.png',
+                'quantity' => rand(1, 10),
+                'views'    => rand(100, 900),
+                'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
+
+            ])->categories()->attach($categoryId );;
+        }
+
 
         /**this is good factory*/
-        factory(Product::class,20)->create();
+        //  factory(Product::class,3)->create();
     }
 
 }
