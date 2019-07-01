@@ -60,7 +60,7 @@
                 <div class="row">
                     <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="{{route('home.index')}}">
                                 <img src="/commerce/images/logo/logo.png" alt="logo">
                             </a>
                         </div>
